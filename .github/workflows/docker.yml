@@ -1,4 +1,4 @@
-name: Build and Push Docker Images
+name: Build and Push Docker Image
 
 on:
   push:
@@ -27,8 +27,8 @@ jobs:
 
       - name: Build
         run: |
-          docker build -t ghcr.io/cconovax/fitflowfrontend:latest .
+          docker build -t ghcr.io/cconovax/FitFlowBackend:latest .
 
       - name: Push
         run: |
-          docker push ghcr.io/cconovax/fitflowfrontend:latest
+          docker push ghcr.io/cconovax/FitFlowBackend:latest
