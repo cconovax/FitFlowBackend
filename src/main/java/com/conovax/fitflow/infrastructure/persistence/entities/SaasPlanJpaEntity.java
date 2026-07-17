@@ -34,6 +34,9 @@ public class SaasPlanJpaEntity {
 	@Column(nullable = false, precision = 12, scale = 2)
 	private BigDecimal price;
 
+	@Column(name = "num_days", nullable = false, length = 1000)
+	private Long numDays;
+
 	@Column(name = "stripe_price_id", length = 100)
 	private String stripePriceId;
 
