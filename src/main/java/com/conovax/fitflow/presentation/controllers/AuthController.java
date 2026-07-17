@@ -65,8 +65,8 @@ public class AuthController {
         response.addHeader(HttpHeaders.SET_COOKIE,
                 ResponseCookie.from("auth_token", "")
                         .httpOnly(true)
-                        .secure(true)
-                        .sameSite("Strict")
+                        .secure(env.acceptsProfiles("prod"))
+                        .sameSite(env.acceptsProfiles("prod") ? "Lax" : "Lax")
                         .path("/")
                         .maxAge(0)
                         .build()
@@ -84,7 +84,7 @@ public class AuthController {
         return ResponseCookie.from("auth_token", token)
                 .httpOnly(true)
                 .secure(env.acceptsProfiles("prod"))
-                .sameSite("Strict")
+                .sameSite(env.acceptsProfiles("prod") ? "Lax" : "Lax")
                 .path("/")
                 .maxAge(Duration.ofMillis(jwtExpirationMs))
                 .build();
