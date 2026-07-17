@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
@@ -21,13 +22,19 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-@RequiredArgsConstructor
 public class AuthController {
 
     private final AuthService authService;
 
     @Value("${jwt.expiration:86400000}")
     private long jwtExpirationMs;
+
+    private final Environment env;
+
+    public AuthController(AuthService authService, Environment env) {
+        this.authService = authService;
+        this.env = env;
+    }
 
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@Valid @RequestBody RegisterRequest request) {
@@ -76,7 +83,7 @@ public class AuthController {
     private ResponseCookie buildAuthCookie(String token) {
         return ResponseCookie.from("auth_token", token)
                 .httpOnly(true)
-                .secure(true)
+                .secure(env.acceptsProfiles("prod"))
                 .sameSite("Strict")
                 .path("/")
                 .maxAge(Duration.ofMillis(jwtExpirationMs))
