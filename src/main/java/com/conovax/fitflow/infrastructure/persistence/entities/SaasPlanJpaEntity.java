@@ -34,11 +34,11 @@ public class SaasPlanJpaEntity {
 	@Column(nullable = false, precision = 12, scale = 2)
 	private BigDecimal price;
 
-	@Column(name = "num_days", nullable = false, length = 1000)
-	private Long numDays;
-
 	@Column(name = "stripe_price_id", length = 100)
 	private String stripePriceId;
+
+    @Column(name = "mp_preapproval_plan_id", length = 200)
+    private String mpPreapprovalPlanId;
 
 	@Column(nullable = false)
 	private Boolean status;
