@@ -25,7 +25,7 @@ public class SaasPlanJpaEntity {
 	@Column(nullable = false, length = 80)
 	private String name;
 
-    @Column(nullable = false, length = 80)
+    @Column(nullable = false, length = 20)
     private String billing_cycle;
 
 	@Column(length = 200)

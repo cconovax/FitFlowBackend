@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(
         info = @Info(
-                title = "SexBody Auth API",
+                title = "Fitflow Auth API",
                 version = "1.0.0",
                 description = "API REST para autenticación de usuarios con JWT, roles y permisos. " +
                         "Esta API implementa un sistema completo de autenticación y autorización basado en roles y permisos, " +
