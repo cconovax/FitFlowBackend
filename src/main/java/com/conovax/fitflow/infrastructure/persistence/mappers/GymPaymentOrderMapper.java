@@ -1,8 +1,8 @@
-package com.conovax.sexbody.infrastructure.persistence.mappers;
+package com.conovax.fitflow.infrastructure.persistence.mappers;
 
-import com.conovax.sexbody.domain.entities.GymPaymentOrder;
-import com.conovax.sexbody.infrastructure.persistence.entities.GymJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.entities.GymPaymentOrderJpaEntity;
+import com.conovax.fitflow.domain.entities.GymPaymentOrder;
+import com.conovax.fitflow.infrastructure.persistence.entities.GymJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.entities.GymPaymentOrderJpaEntity;
 import org.springframework.stereotype.Component;
 
 @Component

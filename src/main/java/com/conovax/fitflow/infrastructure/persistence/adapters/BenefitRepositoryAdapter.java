@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.Benefit;
-import com.conovax.sexbody.domain.repositories.BenefitRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.BenefitJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.BenefitMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.BenefitJpaRepository;
+import com.conovax.fitflow.domain.entities.Benefit;
+import com.conovax.fitflow.domain.repositories.BenefitRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.BenefitJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.BenefitMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.BenefitJpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;

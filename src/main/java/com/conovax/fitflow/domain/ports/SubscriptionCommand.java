@@ -1,4 +1,4 @@
-package com.conovax.sexbody.domain.ports;
+package com.conovax.fitflow.domain.ports;
 
 import java.math.BigDecimal;
 import java.util.Collections;

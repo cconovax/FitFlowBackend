@@ -1,11 +1,11 @@
-package com.conovax.sexbody.presentation.controllers;
+package com.conovax.fitflow.presentation.controllers;
 
-import com.conovax.sexbody.application.dto.response.ErrorResponse;
-import com.conovax.sexbody.application.dto.response.UserGymMembershipDetailResponse;
-import com.conovax.sexbody.application.dto.response.UserGymMembershipResponse;
-import com.conovax.sexbody.application.services.UserGymMembershipService;
-import com.conovax.sexbody.infrastructure.security.annotations.RequireActiveGymSubscription;
-import com.conovax.sexbody.infrastructure.security.annotations.RequirePermission;
+import com.conovax.fitflow.application.dto.response.ErrorResponse;
+import com.conovax.fitflow.application.dto.response.UserGymMembershipDetailResponse;
+import com.conovax.fitflow.application.dto.response.UserGymMembershipResponse;
+import com.conovax.fitflow.application.services.UserGymMembershipService;
+import com.conovax.fitflow.infrastructure.security.annotations.RequireActiveGymSubscription;
+import com.conovax.fitflow.infrastructure.security.annotations.RequirePermission;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

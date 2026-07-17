@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.ProductCategory;
-import com.conovax.sexbody.domain.repositories.ProductCategoryRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.ProductCategoryJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.ProductCategoryMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.ProductCategoryJpaRepository;
+import com.conovax.fitflow.domain.entities.ProductCategory;
+import com.conovax.fitflow.domain.repositories.ProductCategoryRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.ProductCategoryJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.ProductCategoryMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.ProductCategoryJpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;

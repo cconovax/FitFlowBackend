@@ -1,13 +1,13 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.request.MembershipRatingRequest;
-import com.conovax.sexbody.application.dto.response.MembershipRatingResponse;
-import com.conovax.sexbody.domain.entities.MembershipRating;
-import com.conovax.sexbody.domain.entities.UserGymMembership;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.MembershipCoachRepository;
-import com.conovax.sexbody.domain.repositories.MembershipRatingRepository;
-import com.conovax.sexbody.domain.repositories.UserGymMembershipRepository;
+import com.conovax.fitflow.application.dto.request.MembershipRatingRequest;
+import com.conovax.fitflow.application.dto.response.MembershipRatingResponse;
+import com.conovax.fitflow.domain.entities.MembershipRating;
+import com.conovax.fitflow.domain.entities.UserGymMembership;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.MembershipCoachRepository;
+import com.conovax.fitflow.domain.repositories.MembershipRatingRepository;
+import com.conovax.fitflow.domain.repositories.UserGymMembershipRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

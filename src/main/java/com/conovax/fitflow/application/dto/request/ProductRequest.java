@@ -1,4 +1,4 @@
-package com.conovax.sexbody.application.dto.request;
+package com.conovax.fitflow.application.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

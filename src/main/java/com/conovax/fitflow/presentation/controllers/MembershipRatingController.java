@@ -1,9 +1,9 @@
-package com.conovax.sexbody.presentation.controllers;
+package com.conovax.fitflow.presentation.controllers;
 
-import com.conovax.sexbody.application.dto.request.MembershipRatingRequest;
-import com.conovax.sexbody.application.dto.response.MembershipRatingResponse;
-import com.conovax.sexbody.application.services.MembershipRatingService;
-import com.conovax.sexbody.infrastructure.security.annotations.RequirePermission;
+import com.conovax.fitflow.application.dto.request.MembershipRatingRequest;
+import com.conovax.fitflow.application.dto.response.MembershipRatingResponse;
+import com.conovax.fitflow.application.services.MembershipRatingService;
+import com.conovax.fitflow.infrastructure.security.annotations.RequirePermission;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;

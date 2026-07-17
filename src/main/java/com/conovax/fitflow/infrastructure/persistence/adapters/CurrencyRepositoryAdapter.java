@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.Currency;
-import com.conovax.sexbody.domain.repositories.CurrencyRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.CurrencyJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.CurrencyMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.CurrencyJpaRepository;
+import com.conovax.fitflow.domain.entities.Currency;
+import com.conovax.fitflow.domain.repositories.CurrencyRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.CurrencyJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.CurrencyMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.CurrencyJpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;

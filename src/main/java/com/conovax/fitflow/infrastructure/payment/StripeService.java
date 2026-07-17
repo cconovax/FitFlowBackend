@@ -1,4 +1,4 @@
-package com.conovax.sexbody.infrastructure.payment;
+package com.conovax.fitflow.infrastructure.payment;
 
 import com.stripe.Stripe;
 import com.stripe.exception.SignatureVerificationException;

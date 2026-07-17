@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.Municipality;
-import com.conovax.sexbody.domain.repositories.MunicipalityRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.MunicipalityJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.MunicipalityMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.MunicipalityJpaRepository;
+import com.conovax.fitflow.domain.entities.Municipality;
+import com.conovax.fitflow.domain.repositories.MunicipalityRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.MunicipalityJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.MunicipalityMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.MunicipalityJpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;

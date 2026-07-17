@@ -1,4 +1,4 @@
-package com.conovax.sexbody.infrastructure.persistence.projections;
+package com.conovax.fitflow.infrastructure.persistence.projections;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

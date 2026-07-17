@@ -1,12 +1,12 @@
-package com.conovax.sexbody.presentation.controllers;
+package com.conovax.fitflow.presentation.controllers;
 
-import com.conovax.sexbody.application.dto.request.PeopleRequest;
-import com.conovax.sexbody.application.dto.response.ErrorResponse;
-import com.conovax.sexbody.application.dto.response.PeopleNumDocumentExistsResponse;
-import com.conovax.sexbody.application.dto.response.PeopleResponse;
-import com.conovax.sexbody.application.pagination.PageResponse;
-import com.conovax.sexbody.application.services.PeopleService;
-import com.conovax.sexbody.infrastructure.security.annotations.RequirePermission;
+import com.conovax.fitflow.application.dto.request.PeopleRequest;
+import com.conovax.fitflow.application.dto.response.ErrorResponse;
+import com.conovax.fitflow.application.dto.response.PeopleNumDocumentExistsResponse;
+import com.conovax.fitflow.application.dto.response.PeopleResponse;
+import com.conovax.fitflow.application.pagination.PageResponse;
+import com.conovax.fitflow.application.services.PeopleService;
+import com.conovax.fitflow.infrastructure.security.annotations.RequirePermission;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

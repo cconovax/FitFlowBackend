@@ -1,9 +1,9 @@
-package com.conovax.sexbody.infrastructure.audit;
+package com.conovax.fitflow.infrastructure.audit;
 
-import com.conovax.sexbody.application.services.AuditLogService;
-import com.conovax.sexbody.domain.entities.AuditLog;
-import com.conovax.sexbody.infrastructure.security.GymAuthenticationDetails;
-import com.conovax.sexbody.infrastructure.security.UserDetailsImpl;
+import com.conovax.fitflow.application.services.AuditLogService;
+import com.conovax.fitflow.domain.entities.AuditLog;
+import com.conovax.fitflow.infrastructure.security.GymAuthenticationDetails;
+import com.conovax.fitflow.infrastructure.security.UserDetailsImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

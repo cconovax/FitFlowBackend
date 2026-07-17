@@ -1,6 +1,6 @@
-package com.conovax.sexbody.domain.repositories;
+package com.conovax.fitflow.domain.repositories;
 
-import com.conovax.sexbody.domain.entities.TypeDocument;
+import com.conovax.fitflow.domain.entities.TypeDocument;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.conovax.sexbody.infrastructure.security.annotations;
+package com.conovax.fitflow.infrastructure.security.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

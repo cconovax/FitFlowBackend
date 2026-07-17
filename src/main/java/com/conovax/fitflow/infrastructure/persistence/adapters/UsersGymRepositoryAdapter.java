@@ -1,12 +1,12 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.UserGymUserPeople;
-import com.conovax.sexbody.domain.entities.UsersGym;
-import com.conovax.sexbody.domain.repositories.UsersGymRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.UsersGymJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.UsersGymMapper;
-import com.conovax.sexbody.infrastructure.persistence.projections.UserGymUserPeopleProjection;
-import com.conovax.sexbody.infrastructure.persistence.repositories.UsersGymJpaRepository;
+import com.conovax.fitflow.domain.entities.UserGymUserPeople;
+import com.conovax.fitflow.domain.entities.UsersGym;
+import com.conovax.fitflow.domain.repositories.UsersGymRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.UsersGymJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.UsersGymMapper;
+import com.conovax.fitflow.infrastructure.persistence.projections.UserGymUserPeopleProjection;
+import com.conovax.fitflow.infrastructure.persistence.repositories.UsersGymJpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;

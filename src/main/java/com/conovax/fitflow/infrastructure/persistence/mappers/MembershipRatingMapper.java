@@ -1,7 +1,7 @@
-package com.conovax.sexbody.infrastructure.persistence.mappers;
+package com.conovax.fitflow.infrastructure.persistence.mappers;
 
-import com.conovax.sexbody.domain.entities.MembershipRating;
-import com.conovax.sexbody.infrastructure.persistence.entities.MembershipRatingJpaEntity;
+import com.conovax.fitflow.domain.entities.MembershipRating;
+import com.conovax.fitflow.infrastructure.persistence.entities.MembershipRatingJpaEntity;
 import org.springframework.stereotype.Component;
 
 @Component

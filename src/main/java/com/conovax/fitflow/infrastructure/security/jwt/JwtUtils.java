@@ -1,4 +1,4 @@
-package com.conovax.sexbody.infrastructure.security.jwt;
+package com.conovax.fitflow.infrastructure.security.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

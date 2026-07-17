@@ -1,11 +1,11 @@
-package com.conovax.sexbody.presentation.controllers;
+package com.conovax.fitflow.presentation.controllers;
 
-import com.conovax.sexbody.application.dto.request.LoginWithGymRequest;
-import com.conovax.sexbody.application.dto.request.RegisterRequest;
-import com.conovax.sexbody.application.dto.response.AuthGymResponse;
-import com.conovax.sexbody.application.dto.response.CurrentUserResponse;
-import com.conovax.sexbody.application.dto.response.UserResponse;
-import com.conovax.sexbody.application.services.AuthService;
+import com.conovax.fitflow.application.dto.request.LoginWithGymRequest;
+import com.conovax.fitflow.application.dto.request.RegisterRequest;
+import com.conovax.fitflow.application.dto.response.AuthGymResponse;
+import com.conovax.fitflow.application.dto.response.CurrentUserResponse;
+import com.conovax.fitflow.application.dto.response.UserResponse;
+import com.conovax.fitflow.application.services.AuthService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

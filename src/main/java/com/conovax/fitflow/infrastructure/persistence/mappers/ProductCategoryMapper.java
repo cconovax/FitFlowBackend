@@ -1,7 +1,7 @@
-package com.conovax.sexbody.infrastructure.persistence.mappers;
+package com.conovax.fitflow.infrastructure.persistence.mappers;
 
-import com.conovax.sexbody.domain.entities.ProductCategory;
-import com.conovax.sexbody.infrastructure.persistence.entities.ProductCategoryJpaEntity;
+import com.conovax.fitflow.domain.entities.ProductCategory;
+import com.conovax.fitflow.infrastructure.persistence.entities.ProductCategoryJpaEntity;
 import org.springframework.stereotype.Component;
 
 @Component

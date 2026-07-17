@@ -1,6 +1,6 @@
-package com.conovax.sexbody.domain.repositories;
+package com.conovax.fitflow.domain.repositories;
 
-import com.conovax.sexbody.domain.entities.PermissionRole;
+import com.conovax.fitflow.domain.entities.PermissionRole;
 
 public interface PermissionRoleRepository {
 	boolean existsByRoleIdAndPermissionId(Long roleId, Long permissionId);

@@ -1,4 +1,4 @@
-package com.conovax.sexbody.domain.entities;
+package com.conovax.fitflow.domain.entities;
 
 public enum GymStatus {
 	ACTIVE,

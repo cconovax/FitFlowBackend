@@ -1,6 +1,6 @@
-package com.conovax.sexbody.infrastructure.persistence.repositories;
+package com.conovax.fitflow.infrastructure.persistence.repositories;
 
-import com.conovax.sexbody.infrastructure.persistence.entities.MembershipRatingJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.entities.MembershipRatingJpaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

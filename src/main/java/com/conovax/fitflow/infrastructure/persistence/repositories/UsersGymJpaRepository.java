@@ -1,7 +1,7 @@
-package com.conovax.sexbody.infrastructure.persistence.repositories;
+package com.conovax.fitflow.infrastructure.persistence.repositories;
 
-import com.conovax.sexbody.infrastructure.persistence.entities.UsersGymJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.projections.UserGymUserPeopleProjection;
+import com.conovax.fitflow.infrastructure.persistence.entities.UsersGymJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.projections.UserGymUserPeopleProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

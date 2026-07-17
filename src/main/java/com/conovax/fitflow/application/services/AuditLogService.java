@@ -1,10 +1,10 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.response.AuditLogResponse;
-import com.conovax.sexbody.application.pagination.PageResponse;
-import com.conovax.sexbody.application.pagination.PaginationUtils;
-import com.conovax.sexbody.domain.entities.AuditLog;
-import com.conovax.sexbody.domain.repositories.AuditLogRepository;
+import com.conovax.fitflow.application.dto.response.AuditLogResponse;
+import com.conovax.fitflow.application.pagination.PageResponse;
+import com.conovax.fitflow.application.pagination.PaginationUtils;
+import com.conovax.fitflow.domain.entities.AuditLog;
+import com.conovax.fitflow.domain.repositories.AuditLogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

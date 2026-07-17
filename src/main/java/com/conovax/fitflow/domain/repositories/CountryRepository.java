@@ -1,6 +1,6 @@
-package com.conovax.sexbody.domain.repositories;
+package com.conovax.fitflow.domain.repositories;
 
-import com.conovax.sexbody.domain.entities.Country;
+import com.conovax.fitflow.domain.entities.Country;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

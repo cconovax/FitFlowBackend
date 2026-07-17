@@ -1,14 +1,14 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.request.BenefitRequest;
-import com.conovax.sexbody.application.dto.response.BenefitResponse;
-import com.conovax.sexbody.application.pagination.PageResponse;
-import com.conovax.sexbody.application.pagination.PaginationUtils;
-import com.conovax.sexbody.domain.entities.Benefit;
-import com.conovax.sexbody.domain.exceptions.DuplicateResourceException;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.BenefitRepository;
-import com.conovax.sexbody.domain.repositories.GymRepository;
+import com.conovax.fitflow.application.dto.request.BenefitRequest;
+import com.conovax.fitflow.application.dto.response.BenefitResponse;
+import com.conovax.fitflow.application.pagination.PageResponse;
+import com.conovax.fitflow.application.pagination.PaginationUtils;
+import com.conovax.fitflow.domain.entities.Benefit;
+import com.conovax.fitflow.domain.exceptions.DuplicateResourceException;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.BenefitRepository;
+import com.conovax.fitflow.domain.repositories.GymRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

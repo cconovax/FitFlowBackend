@@ -1,9 +1,9 @@
-package com.conovax.sexbody.infrastructure.persistence.mappers;
+package com.conovax.fitflow.infrastructure.persistence.mappers;
 
-import com.conovax.sexbody.domain.entities.SaasPlanFeature;
-import com.conovax.sexbody.infrastructure.persistence.entities.SaasFeatureJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.entities.SaasPlanFeatureJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.entities.SaasPlanJpaEntity;
+import com.conovax.fitflow.domain.entities.SaasPlanFeature;
+import com.conovax.fitflow.infrastructure.persistence.entities.SaasFeatureJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.entities.SaasPlanFeatureJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.entities.SaasPlanJpaEntity;
 import org.springframework.stereotype.Component;
 
 @Component

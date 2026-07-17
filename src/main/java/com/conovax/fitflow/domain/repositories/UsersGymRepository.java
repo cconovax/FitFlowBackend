@@ -1,7 +1,7 @@
-package com.conovax.sexbody.domain.repositories;
+package com.conovax.fitflow.domain.repositories;
 
-import com.conovax.sexbody.domain.entities.UserGymUserPeople;
-import com.conovax.sexbody.domain.entities.UsersGym;
+import com.conovax.fitflow.domain.entities.UserGymUserPeople;
+import com.conovax.fitflow.domain.entities.UsersGym;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

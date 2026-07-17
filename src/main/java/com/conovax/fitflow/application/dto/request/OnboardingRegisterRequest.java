@@ -1,4 +1,4 @@
-package com.conovax.sexbody.application.dto.request;
+package com.conovax.fitflow.application.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;

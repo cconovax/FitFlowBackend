@@ -1,13 +1,13 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.request.PermissionRequest;
-import com.conovax.sexbody.application.dto.response.PermissionResponse;
-import com.conovax.sexbody.application.pagination.PageResponse;
-import com.conovax.sexbody.application.pagination.PaginationUtils;
-import com.conovax.sexbody.domain.entities.Permission;
-import com.conovax.sexbody.domain.exceptions.DuplicateResourceException;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.PermissionRepository;
+import com.conovax.fitflow.application.dto.request.PermissionRequest;
+import com.conovax.fitflow.application.dto.response.PermissionResponse;
+import com.conovax.fitflow.application.pagination.PageResponse;
+import com.conovax.fitflow.application.pagination.PaginationUtils;
+import com.conovax.fitflow.domain.entities.Permission;
+import com.conovax.fitflow.domain.exceptions.DuplicateResourceException;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.PermissionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

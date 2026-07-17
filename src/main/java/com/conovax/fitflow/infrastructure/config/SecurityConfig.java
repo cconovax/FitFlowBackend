@@ -1,9 +1,9 @@
-package com.conovax.sexbody.infrastructure.config;
+package com.conovax.fitflow.infrastructure.config;
 
-import com.conovax.sexbody.infrastructure.audit.AuditLogFilter;
-import com.conovax.sexbody.infrastructure.security.RateLimitingFilter;
-import com.conovax.sexbody.infrastructure.security.UserDetailsServiceImpl;
-import com.conovax.sexbody.infrastructure.security.jwt.JwtAuthenticationFilter;
+import com.conovax.fitflow.infrastructure.audit.AuditLogFilter;
+import com.conovax.fitflow.infrastructure.security.RateLimitingFilter;
+import com.conovax.fitflow.infrastructure.security.UserDetailsServiceImpl;
+import com.conovax.fitflow.infrastructure.security.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

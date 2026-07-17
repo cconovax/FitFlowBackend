@@ -1,4 +1,4 @@
-package com.conovax.sexbody.domain.exceptions;
+package com.conovax.fitflow.domain.exceptions;
 
 public class DuplicateResourceException extends RuntimeException {
     public DuplicateResourceException(String message) {

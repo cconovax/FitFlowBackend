@@ -1,12 +1,12 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.request.CurrencyRequest;
-import com.conovax.sexbody.application.dto.response.CurrencyResponse;
-import com.conovax.sexbody.application.pagination.PageResponse;
-import com.conovax.sexbody.application.pagination.PaginationUtils;
-import com.conovax.sexbody.domain.entities.Currency;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.CurrencyRepository;
+import com.conovax.fitflow.application.dto.request.CurrencyRequest;
+import com.conovax.fitflow.application.dto.response.CurrencyResponse;
+import com.conovax.fitflow.application.pagination.PageResponse;
+import com.conovax.fitflow.application.pagination.PaginationUtils;
+import com.conovax.fitflow.domain.entities.Currency;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.CurrencyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

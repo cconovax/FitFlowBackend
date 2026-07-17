@@ -1,4 +1,4 @@
-package com.conovax.sexbody.application.pagination;
+package com.conovax.fitflow.application.pagination;
 
 public record PageMeta(
 		int page,

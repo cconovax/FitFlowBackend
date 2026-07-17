@@ -1,6 +1,6 @@
-package com.conovax.sexbody.domain.repositories;
+package com.conovax.fitflow.domain.repositories;
 
-import com.conovax.sexbody.domain.entities.MembershipRating;
+import com.conovax.fitflow.domain.entities.MembershipRating;
 
 import java.util.List;
 import java.util.Optional;

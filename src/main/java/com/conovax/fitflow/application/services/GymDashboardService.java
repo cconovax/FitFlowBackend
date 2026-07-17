@@ -1,15 +1,15 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.response.GymDashboardResponse;
-import com.conovax.sexbody.application.dto.response.GymSubscriptionResponse;
-import com.conovax.sexbody.domain.entities.Gym;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.GymRepository;
-import com.conovax.sexbody.domain.repositories.MunicipalityRepository;
-import com.conovax.sexbody.infrastructure.persistence.repositories.SaleJpaRepository;
-import com.conovax.sexbody.infrastructure.persistence.repositories.SessionLogJpaRepository;
-import com.conovax.sexbody.infrastructure.persistence.repositories.UserGymMembershipJpaRepository;
-import com.conovax.sexbody.infrastructure.persistence.repositories.UsersGymJpaRepository;
+import com.conovax.fitflow.application.dto.response.GymDashboardResponse;
+import com.conovax.fitflow.application.dto.response.GymSubscriptionResponse;
+import com.conovax.fitflow.domain.entities.Gym;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.GymRepository;
+import com.conovax.fitflow.domain.repositories.MunicipalityRepository;
+import com.conovax.fitflow.infrastructure.persistence.repositories.SaleJpaRepository;
+import com.conovax.fitflow.infrastructure.persistence.repositories.SessionLogJpaRepository;
+import com.conovax.fitflow.infrastructure.persistence.repositories.UserGymMembershipJpaRepository;
+import com.conovax.fitflow.infrastructure.persistence.repositories.UsersGymJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

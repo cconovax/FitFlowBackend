@@ -1,10 +1,10 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.request.TypeDocumentRequest;
-import com.conovax.sexbody.application.dto.response.TypeDocumentResponse;
-import com.conovax.sexbody.domain.entities.TypeDocument;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.TypeDocumentRepository;
+import com.conovax.fitflow.application.dto.request.TypeDocumentRequest;
+import com.conovax.fitflow.application.dto.response.TypeDocumentResponse;
+import com.conovax.fitflow.domain.entities.TypeDocument;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.TypeDocumentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

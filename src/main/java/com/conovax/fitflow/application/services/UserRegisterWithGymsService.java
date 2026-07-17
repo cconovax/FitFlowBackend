@@ -1,15 +1,15 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.request.RegisterRequest;
-import com.conovax.sexbody.application.dto.request.UserRegisterWithGymsRequest;
-import com.conovax.sexbody.application.dto.response.UserResponse;
-import com.conovax.sexbody.domain.entities.UsersGym;
-import com.conovax.sexbody.domain.entities.UsersGymRole;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.RoleRepository;
-import com.conovax.sexbody.domain.repositories.GymRepository;
-import com.conovax.sexbody.domain.repositories.UserRoleRepository;
-import com.conovax.sexbody.domain.repositories.UsersGymRepository;
+import com.conovax.fitflow.application.dto.request.RegisterRequest;
+import com.conovax.fitflow.application.dto.request.UserRegisterWithGymsRequest;
+import com.conovax.fitflow.application.dto.response.UserResponse;
+import com.conovax.fitflow.domain.entities.UsersGym;
+import com.conovax.fitflow.domain.entities.UsersGymRole;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.RoleRepository;
+import com.conovax.fitflow.domain.repositories.GymRepository;
+import com.conovax.fitflow.domain.repositories.UserRoleRepository;
+import com.conovax.fitflow.domain.repositories.UsersGymRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

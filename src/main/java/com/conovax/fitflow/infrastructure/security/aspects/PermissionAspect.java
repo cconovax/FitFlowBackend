@@ -1,6 +1,6 @@
-package com.conovax.sexbody.infrastructure.security.aspects;
+package com.conovax.fitflow.infrastructure.security.aspects;
 
-import com.conovax.sexbody.infrastructure.security.annotations.RequirePermission;
+import com.conovax.fitflow.infrastructure.security.annotations.RequirePermission;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

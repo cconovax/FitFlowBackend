@@ -1,7 +1,7 @@
-package com.conovax.sexbody.infrastructure.persistence.mappers;
+package com.conovax.fitflow.infrastructure.persistence.mappers;
 
-import com.conovax.sexbody.domain.entities.AuditLog;
-import com.conovax.sexbody.infrastructure.persistence.entities.AuditLogJpaEntity;
+import com.conovax.fitflow.domain.entities.AuditLog;
+import com.conovax.fitflow.infrastructure.persistence.entities.AuditLogJpaEntity;
 import org.springframework.stereotype.Component;
 
 @Component

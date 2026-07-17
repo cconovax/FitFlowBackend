@@ -1,6 +1,6 @@
-package com.conovax.sexbody.infrastructure.persistence.repositories;
+package com.conovax.fitflow.infrastructure.persistence.repositories;
 
-import com.conovax.sexbody.infrastructure.persistence.entities.BenefitJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.entities.BenefitJpaEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.PermissionRole;
-import com.conovax.sexbody.domain.repositories.PermissionRoleRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.PermissionRoleJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.PermissionRoleMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.PermissionRoleJpaRepository;
+import com.conovax.fitflow.domain.entities.PermissionRole;
+import com.conovax.fitflow.domain.repositories.PermissionRoleRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.PermissionRoleJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.PermissionRoleMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.PermissionRoleJpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

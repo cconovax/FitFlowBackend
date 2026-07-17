@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.Role;
-import com.conovax.sexbody.domain.repositories.RoleRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.RoleJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.RoleMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.RoleJpaRepository;
+import com.conovax.fitflow.domain.entities.Role;
+import com.conovax.fitflow.domain.repositories.RoleRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.RoleJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.RoleMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.RoleJpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;

@@ -1,11 +1,11 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.AccessDevice;
-import com.conovax.sexbody.domain.repositories.AccessDeviceRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.GymJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.AccessDeviceMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.AccessDeviceJpaRepository;
-import com.conovax.sexbody.infrastructure.persistence.repositories.GymJpaRepository;
+import com.conovax.fitflow.domain.entities.AccessDevice;
+import com.conovax.fitflow.domain.repositories.AccessDeviceRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.GymJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.AccessDeviceMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.AccessDeviceJpaRepository;
+import com.conovax.fitflow.infrastructure.persistence.repositories.GymJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
-package com.conovax.sexbody.infrastructure.persistence.repositories;
+package com.conovax.fitflow.infrastructure.persistence.repositories;
 
-import com.conovax.sexbody.infrastructure.persistence.entities.UsersGymRoleJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.entities.UsersGymRoleJpaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

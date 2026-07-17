@@ -1,10 +1,10 @@
-package com.conovax.sexbody.presentation.controllers;
+package com.conovax.fitflow.presentation.controllers;
 
-import com.conovax.sexbody.application.dto.request.OnboardingGymRequest;
-import com.conovax.sexbody.application.dto.request.OnboardingRegisterRequest;
-import com.conovax.sexbody.application.dto.response.AuthGymResponse;
-import com.conovax.sexbody.application.dto.response.OnboardingGymResponse;
-import com.conovax.sexbody.application.services.OnboardingService;
+import com.conovax.fitflow.application.dto.request.OnboardingGymRequest;
+import com.conovax.fitflow.application.dto.request.OnboardingRegisterRequest;
+import com.conovax.fitflow.application.dto.response.AuthGymResponse;
+import com.conovax.fitflow.application.dto.response.OnboardingGymResponse;
+import com.conovax.fitflow.application.services.OnboardingService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;

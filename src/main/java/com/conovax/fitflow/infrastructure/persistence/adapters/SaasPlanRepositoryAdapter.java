@@ -1,9 +1,9 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.SaasPlan;
-import com.conovax.sexbody.domain.repositories.SaasPlanRepository;
-import com.conovax.sexbody.infrastructure.persistence.mappers.SaasPlanMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.SaasPlanJpaRepository;
+import com.conovax.fitflow.domain.entities.SaasPlan;
+import com.conovax.fitflow.domain.repositories.SaasPlanRepository;
+import com.conovax.fitflow.infrastructure.persistence.mappers.SaasPlanMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.SaasPlanJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

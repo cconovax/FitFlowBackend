@@ -1,6 +1,6 @@
-package com.conovax.sexbody.domain.repositories;
+package com.conovax.fitflow.domain.repositories;
 
-import com.conovax.sexbody.domain.entities.SaasFeature;
+import com.conovax.fitflow.domain.entities.SaasFeature;
 
 import java.util.List;
 import java.util.Optional;

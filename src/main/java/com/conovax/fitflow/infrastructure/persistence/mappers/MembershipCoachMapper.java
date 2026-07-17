@@ -1,7 +1,7 @@
-package com.conovax.sexbody.infrastructure.persistence.mappers;
+package com.conovax.fitflow.infrastructure.persistence.mappers;
 
-import com.conovax.sexbody.domain.entities.MembershipCoach;
-import com.conovax.sexbody.infrastructure.persistence.entities.MembershipCoachJpaEntity;
+import com.conovax.fitflow.domain.entities.MembershipCoach;
+import com.conovax.fitflow.infrastructure.persistence.entities.MembershipCoachJpaEntity;
 import org.springframework.stereotype.Component;
 
 @Component

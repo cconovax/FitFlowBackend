@@ -1,6 +1,6 @@
-package com.conovax.sexbody.infrastructure.persistence.entities;
+package com.conovax.fitflow.infrastructure.persistence.entities;
 
-import com.conovax.sexbody.domain.entities.GymStatus;
+import com.conovax.fitflow.domain.entities.GymStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

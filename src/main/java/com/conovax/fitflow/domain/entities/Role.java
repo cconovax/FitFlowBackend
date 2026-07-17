@@ -1,4 +1,4 @@
-package com.conovax.sexbody.domain.entities;
+package com.conovax.fitflow.domain.entities;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -13,20 +13,20 @@ import java.util.Set;
 @Builder(toBuilder = true)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Role {
-	private Long id;
-	private String name;
-	private String code;
-	private Long gymId;
-	@Builder.Default
-	private Boolean fullAccess = false;
-	@Builder.Default
-	private Boolean isStaff = false;
-	@Builder.Default
-	private Boolean status = true;
-	private String description;
-	private LocalDateTime createdAt;
-	@Builder.Default
-	private Set<User> users = new HashSet<>();
-	@Builder.Default
-	private Set<Permission> permissions = new HashSet<>();
+    private Long id;
+    private String name;
+    private String code;
+    private Long gymId;
+    @Builder.Default
+    private Boolean fullAccess = false;
+    @Builder.Default
+    private Boolean isStaff = false;
+    @Builder.Default
+    private Boolean status = true;
+    private String description;
+    private LocalDateTime createdAt;
+    @Builder.Default
+    private Set<User> users = new HashSet<>();
+    @Builder.Default
+    private Set<Permission> permissions = new HashSet<>();
 }

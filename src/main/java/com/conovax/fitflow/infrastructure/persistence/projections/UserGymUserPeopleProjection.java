@@ -1,4 +1,4 @@
-package com.conovax.sexbody.infrastructure.persistence.projections;
+package com.conovax.fitflow.infrastructure.persistence.projections;
 
 public interface UserGymUserPeopleProjection {
 	Long getUserGymId();

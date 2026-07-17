@@ -1,12 +1,12 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.response.UserGymUserResponse;
-import com.conovax.sexbody.application.pagination.PageResponse;
-import com.conovax.sexbody.application.pagination.PaginationUtils;
-import com.conovax.sexbody.domain.entities.UserGymUserPeople;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.GymRepository;
-import com.conovax.sexbody.domain.repositories.UsersGymRepository;
+import com.conovax.fitflow.application.dto.response.UserGymUserResponse;
+import com.conovax.fitflow.application.pagination.PageResponse;
+import com.conovax.fitflow.application.pagination.PaginationUtils;
+import com.conovax.fitflow.domain.entities.UserGymUserPeople;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.GymRepository;
+import com.conovax.fitflow.domain.repositories.UsersGymRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

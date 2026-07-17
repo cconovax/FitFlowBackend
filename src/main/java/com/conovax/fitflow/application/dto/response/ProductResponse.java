@@ -1,4 +1,4 @@
-package com.conovax.sexbody.application.dto.response;
+package com.conovax.fitflow.application.dto.response;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

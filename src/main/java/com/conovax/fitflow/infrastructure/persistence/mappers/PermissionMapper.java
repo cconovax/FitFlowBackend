@@ -1,7 +1,7 @@
-package com.conovax.sexbody.infrastructure.persistence.mappers;
+package com.conovax.fitflow.infrastructure.persistence.mappers;
 
-import com.conovax.sexbody.domain.entities.Permission;
-import com.conovax.sexbody.infrastructure.persistence.entities.PermissionJpaEntity;
+import com.conovax.fitflow.domain.entities.Permission;
+import com.conovax.fitflow.infrastructure.persistence.entities.PermissionJpaEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;

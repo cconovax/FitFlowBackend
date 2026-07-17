@@ -1,9 +1,9 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.response.GymSubscriptionResponse;
-import com.conovax.sexbody.application.dto.response.SaasPlanResponse;
-import com.conovax.sexbody.domain.exceptions.FeatureNotAvailableException;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.application.dto.response.GymSubscriptionResponse;
+import com.conovax.fitflow.application.dto.response.SaasPlanResponse;
+import com.conovax.fitflow.domain.exceptions.FeatureNotAvailableException;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

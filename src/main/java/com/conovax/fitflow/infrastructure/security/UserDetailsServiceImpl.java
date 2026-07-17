@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.security;
+package com.conovax.fitflow.infrastructure.security;
 
-import com.conovax.sexbody.domain.entities.Role;
-import com.conovax.sexbody.domain.entities.User;
-import com.conovax.sexbody.domain.repositories.RoleRepository;
-import com.conovax.sexbody.domain.repositories.UserRepository;
-import com.conovax.sexbody.domain.repositories.UserRoleRepository;
+import com.conovax.fitflow.domain.entities.Role;
+import com.conovax.fitflow.domain.entities.User;
+import com.conovax.fitflow.domain.repositories.RoleRepository;
+import com.conovax.fitflow.domain.repositories.UserRepository;
+import com.conovax.fitflow.domain.repositories.UserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

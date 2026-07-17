@@ -1,4 +1,4 @@
-package com.conovax.sexbody.domain.ports;
+package com.conovax.fitflow.domain.ports;
 
 /**
  * Resultado de la creación de una suscripción en una pasarela de pago.

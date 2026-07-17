@@ -1,7 +1,7 @@
-package com.conovax.sexbody.infrastructure.persistence.mappers;
+package com.conovax.fitflow.infrastructure.persistence.mappers;
 
-import com.conovax.sexbody.domain.entities.Currency;
-import com.conovax.sexbody.infrastructure.persistence.entities.CurrencyJpaEntity;
+import com.conovax.fitflow.domain.entities.Currency;
+import com.conovax.fitflow.infrastructure.persistence.entities.CurrencyJpaEntity;
 import org.springframework.stereotype.Component;
 
 @Component

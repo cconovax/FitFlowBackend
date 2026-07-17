@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.AuditLog;
-import com.conovax.sexbody.domain.repositories.AuditLogRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.AuditLogJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.AuditLogMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.AuditLogJpaRepository;
+import com.conovax.fitflow.domain.entities.AuditLog;
+import com.conovax.fitflow.domain.repositories.AuditLogRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.AuditLogJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.AuditLogMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.AuditLogJpaRepository;
 import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

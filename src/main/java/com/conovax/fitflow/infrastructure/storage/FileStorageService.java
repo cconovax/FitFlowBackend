@@ -1,4 +1,4 @@
-package com.conovax.sexbody.infrastructure.storage;
+package com.conovax.fitflow.infrastructure.storage;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

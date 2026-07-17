@@ -1,9 +1,9 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.GymSubscription;
-import com.conovax.sexbody.domain.repositories.GymSubscriptionRepository;
-import com.conovax.sexbody.infrastructure.persistence.mappers.GymSubscriptionMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.GymSubscriptionJpaRepository;
+import com.conovax.fitflow.domain.entities.GymSubscription;
+import com.conovax.fitflow.domain.repositories.GymSubscriptionRepository;
+import com.conovax.fitflow.infrastructure.persistence.mappers.GymSubscriptionMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.GymSubscriptionJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.Country;
-import com.conovax.sexbody.domain.repositories.CountryRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.CountryJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.CountryMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.CountryJpaRepository;
+import com.conovax.fitflow.domain.entities.Country;
+import com.conovax.fitflow.domain.repositories.CountryRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.CountryJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.CountryMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.CountryJpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;

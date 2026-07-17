@@ -1,11 +1,11 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.request.SaasFeatureRequest;
-import com.conovax.sexbody.application.dto.response.SaasFeatureResponse;
-import com.conovax.sexbody.domain.entities.SaasFeature;
-import com.conovax.sexbody.domain.exceptions.DuplicateResourceException;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.SaasFeatureRepository;
+import com.conovax.fitflow.application.dto.request.SaasFeatureRequest;
+import com.conovax.fitflow.application.dto.response.SaasFeatureResponse;
+import com.conovax.fitflow.domain.entities.SaasFeature;
+import com.conovax.fitflow.domain.exceptions.DuplicateResourceException;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.SaasFeatureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

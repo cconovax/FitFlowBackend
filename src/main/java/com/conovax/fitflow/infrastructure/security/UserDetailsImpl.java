@@ -1,8 +1,8 @@
-package com.conovax.sexbody.infrastructure.security;
+package com.conovax.fitflow.infrastructure.security;
 
-import com.conovax.sexbody.domain.entities.Permission;
-import com.conovax.sexbody.domain.entities.Role;
-import com.conovax.sexbody.domain.entities.User;
+import com.conovax.fitflow.domain.entities.Permission;
+import com.conovax.fitflow.domain.entities.Role;
+import com.conovax.fitflow.domain.entities.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

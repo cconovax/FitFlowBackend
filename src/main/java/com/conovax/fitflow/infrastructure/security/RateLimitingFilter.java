@@ -1,8 +1,8 @@
-package com.conovax.sexbody.infrastructure.security;
+package com.conovax.fitflow.infrastructure.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.conovax.sexbody.application.dto.response.ErrorResponse;
+import com.conovax.fitflow.application.dto.response.ErrorResponse;
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
 import jakarta.servlet.FilterChain;

@@ -1,12 +1,12 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.UserGymMembershipActiveUser;
-import com.conovax.sexbody.infrastructure.persistence.projections.UserGymMembershipActiveProjection;
-import com.conovax.sexbody.domain.entities.UserGymMembership;
-import com.conovax.sexbody.domain.repositories.UserGymMembershipRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.UserGymMembershipJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.UserGymMembershipMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.UserGymMembershipJpaRepository;
+import com.conovax.fitflow.domain.entities.UserGymMembershipActiveUser;
+import com.conovax.fitflow.infrastructure.persistence.projections.UserGymMembershipActiveProjection;
+import com.conovax.fitflow.domain.entities.UserGymMembership;
+import com.conovax.fitflow.domain.repositories.UserGymMembershipRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.UserGymMembershipJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.UserGymMembershipMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.UserGymMembershipJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;

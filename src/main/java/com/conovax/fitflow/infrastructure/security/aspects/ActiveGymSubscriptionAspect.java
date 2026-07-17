@@ -1,9 +1,9 @@
-package com.conovax.sexbody.infrastructure.security.aspects;
+package com.conovax.fitflow.infrastructure.security.aspects;
 
-import com.conovax.sexbody.application.services.GymSubscriptionService;
-import com.conovax.sexbody.domain.exceptions.SubscriptionInactiveException;
-import com.conovax.sexbody.infrastructure.security.GymAuthenticationDetails;
-import com.conovax.sexbody.infrastructure.security.annotations.RequireActiveGymSubscription;
+import com.conovax.fitflow.application.services.GymSubscriptionService;
+import com.conovax.fitflow.domain.exceptions.SubscriptionInactiveException;
+import com.conovax.fitflow.infrastructure.security.GymAuthenticationDetails;
+import com.conovax.fitflow.infrastructure.security.annotations.RequireActiveGymSubscription;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.JoinPoint;

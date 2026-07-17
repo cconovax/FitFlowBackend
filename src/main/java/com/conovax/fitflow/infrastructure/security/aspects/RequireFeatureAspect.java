@@ -1,8 +1,8 @@
-package com.conovax.sexbody.infrastructure.security.aspects;
+package com.conovax.fitflow.infrastructure.security.aspects;
 
-import com.conovax.sexbody.application.services.GymSaasAccessService;
-import com.conovax.sexbody.infrastructure.security.GymAuthenticationDetails;
-import com.conovax.sexbody.infrastructure.security.annotations.RequireFeature;
+import com.conovax.fitflow.application.services.GymSaasAccessService;
+import com.conovax.fitflow.infrastructure.security.GymAuthenticationDetails;
+import com.conovax.fitflow.infrastructure.security.annotations.RequireFeature;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

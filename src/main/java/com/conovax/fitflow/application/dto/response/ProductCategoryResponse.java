@@ -1,4 +1,4 @@
-package com.conovax.sexbody.application.dto.response;
+package com.conovax.fitflow.application.dto.response;
 
 public record ProductCategoryResponse(
 		Long id,

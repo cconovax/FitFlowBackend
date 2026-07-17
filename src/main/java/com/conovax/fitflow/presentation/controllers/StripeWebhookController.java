@@ -1,7 +1,7 @@
-package com.conovax.sexbody.presentation.controllers;
+package com.conovax.fitflow.presentation.controllers;
 
-import com.conovax.sexbody.application.services.GymSaasSubscriptionService;
-import com.conovax.sexbody.infrastructure.payment.StripeService;
+import com.conovax.fitflow.application.services.GymSaasSubscriptionService;
+import com.conovax.fitflow.infrastructure.payment.StripeService;
 import com.stripe.model.Event;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

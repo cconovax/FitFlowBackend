@@ -1,9 +1,9 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.SaleDetail;
-import com.conovax.sexbody.domain.repositories.SaleDetailRepository;
-import com.conovax.sexbody.infrastructure.persistence.mappers.SaleDetailMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.SaleDetailJpaRepository;
+import com.conovax.fitflow.domain.entities.SaleDetail;
+import com.conovax.fitflow.domain.repositories.SaleDetailRepository;
+import com.conovax.fitflow.infrastructure.persistence.mappers.SaleDetailMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.SaleDetailJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

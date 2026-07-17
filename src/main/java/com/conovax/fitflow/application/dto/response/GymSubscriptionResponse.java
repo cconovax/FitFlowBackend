@@ -1,4 +1,4 @@
-package com.conovax.sexbody.application.dto.response;
+package com.conovax.fitflow.application.dto.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

@@ -1,4 +1,4 @@
-package com.conovax.sexbody.domain.exceptions;
+package com.conovax.fitflow.domain.exceptions;
 
 public class FeatureNotAvailableException extends RuntimeException {
 	public FeatureNotAvailableException(String message) {

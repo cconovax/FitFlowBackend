@@ -1,6 +1,6 @@
-package com.conovax.sexbody.infrastructure.payment;
+package com.conovax.fitflow.infrastructure.payment;
 
-import com.conovax.sexbody.domain.ports.PaymentGatewayPort;
+import com.conovax.fitflow.domain.ports.PaymentGatewayPort;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

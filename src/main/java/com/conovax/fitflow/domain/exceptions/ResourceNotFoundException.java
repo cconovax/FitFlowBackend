@@ -1,4 +1,4 @@
-package com.conovax.sexbody.domain.exceptions;
+package com.conovax.fitflow.domain.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {

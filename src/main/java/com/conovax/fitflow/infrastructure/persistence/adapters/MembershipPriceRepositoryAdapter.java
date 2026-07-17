@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.MembershipPrice;
-import com.conovax.sexbody.domain.repositories.MembershipPriceRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.MembershipPriceJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.MembershipPriceMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.MembershipPriceJpaRepository;
+import com.conovax.fitflow.domain.entities.MembershipPrice;
+import com.conovax.fitflow.domain.repositories.MembershipPriceRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.MembershipPriceJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.MembershipPriceMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.MembershipPriceJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;

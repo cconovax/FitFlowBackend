@@ -1,13 +1,13 @@
-package com.conovax.sexbody.application.services;
+package com.conovax.fitflow.application.services;
 
-import com.conovax.sexbody.application.dto.request.GymSubscriptionRequest;
-import com.conovax.sexbody.application.dto.response.GymSubscriptionResponse;
-import com.conovax.sexbody.application.dto.response.SaasPlanFeatureResponse;
-import com.conovax.sexbody.application.dto.response.SaasPlanResponse;
-import com.conovax.sexbody.domain.entities.GymSubscription;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.repositories.GymRepository;
-import com.conovax.sexbody.domain.repositories.GymSubscriptionRepository;
+import com.conovax.fitflow.application.dto.request.GymSubscriptionRequest;
+import com.conovax.fitflow.application.dto.response.GymSubscriptionResponse;
+import com.conovax.fitflow.application.dto.response.SaasPlanFeatureResponse;
+import com.conovax.fitflow.application.dto.response.SaasPlanResponse;
+import com.conovax.fitflow.domain.entities.GymSubscription;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.repositories.GymRepository;
+import com.conovax.fitflow.domain.repositories.GymSubscriptionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

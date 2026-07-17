@@ -1,7 +1,7 @@
-package com.conovax.sexbody.domain.repositories;
+package com.conovax.fitflow.domain.repositories;
 
-import com.conovax.sexbody.domain.entities.UserGymMembershipActiveUser;
-import com.conovax.sexbody.domain.entities.UserGymMembership;
+import com.conovax.fitflow.domain.entities.UserGymMembershipActiveUser;
+import com.conovax.fitflow.domain.entities.UserGymMembership;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,10 +1,10 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.TypeDocument;
-import com.conovax.sexbody.domain.repositories.TypeDocumentRepository;
-import com.conovax.sexbody.infrastructure.persistence.entities.TypeDocumentJpaEntity;
-import com.conovax.sexbody.infrastructure.persistence.mappers.TypeDocumentMapper;
-import com.conovax.sexbody.infrastructure.persistence.repositories.TypeDocumentJpaRepository;
+import com.conovax.fitflow.domain.entities.TypeDocument;
+import com.conovax.fitflow.domain.repositories.TypeDocumentRepository;
+import com.conovax.fitflow.infrastructure.persistence.entities.TypeDocumentJpaEntity;
+import com.conovax.fitflow.infrastructure.persistence.mappers.TypeDocumentMapper;
+import com.conovax.fitflow.infrastructure.persistence.repositories.TypeDocumentJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.conovax.sexbody.infrastructure.config;
+package com.conovax.fitflow.infrastructure.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

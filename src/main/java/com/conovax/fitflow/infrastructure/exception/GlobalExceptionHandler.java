@@ -1,11 +1,11 @@
-package com.conovax.sexbody.infrastructure.exception;
+package com.conovax.fitflow.infrastructure.exception;
 
-import com.conovax.sexbody.application.dto.response.ErrorResponse;
-import com.conovax.sexbody.domain.exceptions.DuplicateResourceException;
-import com.conovax.sexbody.domain.exceptions.FeatureNotAvailableException;
-import com.conovax.sexbody.domain.exceptions.ResourceNotFoundException;
-import com.conovax.sexbody.domain.exceptions.SubscriptionInactiveException;
-import com.conovax.sexbody.domain.exceptions.UnauthorizedException;
+import com.conovax.fitflow.application.dto.response.ErrorResponse;
+import com.conovax.fitflow.domain.exceptions.DuplicateResourceException;
+import com.conovax.fitflow.domain.exceptions.FeatureNotAvailableException;
+import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
+import com.conovax.fitflow.domain.exceptions.SubscriptionInactiveException;
+import com.conovax.fitflow.domain.exceptions.UnauthorizedException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

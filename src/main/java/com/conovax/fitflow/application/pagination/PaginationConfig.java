@@ -1,4 +1,4 @@
-package com.conovax.sexbody.application.pagination;
+package com.conovax.fitflow.application.pagination;
 
 /**
  * Configuración reutilizable de paginación (defaults y límites).

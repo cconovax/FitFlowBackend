@@ -1,8 +1,8 @@
-package com.conovax.sexbody.infrastructure.persistence.adapters;
+package com.conovax.fitflow.infrastructure.persistence.adapters;
 
-import com.conovax.sexbody.domain.entities.SessionLog;
-import com.conovax.sexbody.domain.repositories.SessionLogRepository;
-import com.conovax.sexbody.infrastructure.persistence.repositories.SessionLogJpaRepository;
+import com.conovax.fitflow.domain.entities.SessionLog;
+import com.conovax.fitflow.domain.repositories.SessionLogRepository;
+import com.conovax.fitflow.infrastructure.persistence.repositories.SessionLogJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
-package com.conovax.sexbody.infrastructure.security.jwt;
+package com.conovax.fitflow.infrastructure.security.jwt;
 
-import com.conovax.sexbody.infrastructure.security.GymAuthenticationDetails;
-import com.conovax.sexbody.infrastructure.security.UserDetailsServiceImpl;
+import com.conovax.fitflow.infrastructure.security.GymAuthenticationDetails;
+import com.conovax.fitflow.infrastructure.security.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
