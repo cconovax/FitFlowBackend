@@ -27,8 +27,8 @@ jobs:
 
       - name: Build
         run: |
-          docker build -t ghcr.io/cconovax/fitflowbackend:0.0.1 .
+          docker build -t ghcr.io/cconovax/fitflowbackend:0.0.2 .
 
       - name: Push
         run: |
-          docker push ghcr.io/cconovax/fitflowbackend:0.0.1
+          docker push ghcr.io/cconovax/fitflowbackend:0.0.2
