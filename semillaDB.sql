@@ -1,10 +1,8 @@
-INSERT INTO roles (role_id, name, code, gym_id, full_access, status) VALUES
-(1, 'Super administrador', 'SuperAdmin', NULL, true, true),
-(2, 'Usuario', 'Usuario', NULL, false, true),
-(3, 'Administrador', 'Administrador', NULL, false, true),
-(4, 'Entrenador', 'Entrenador', NULL, false, true),
-(5, 'Recepcionista', 'Recepcionista', NULL, false, true);
-
+INSERT INTO public.roles (role_id, "name", code, gym_id, full_access, status, is_staff) VALUES(1, 'Super administrador', 'SuperAdmin', NULL, true, true, true);
+INSERT INTO public.roles (role_id, "name", code, gym_id, full_access, status, is_staff) VALUES(5, 'Recepcionista', 'Recepcionista', NULL, false, true, true);
+INSERT INTO public.roles (role_id, "name", code, gym_id, full_access, status, is_staff) VALUES(2, 'Usuario', 'Usuario', NULL, false, true, false);
+INSERT INTO public.roles (role_id, "name", code, gym_id, full_access, status, is_staff) VALUES(4, 'Entrenador', 'Entrenador', NULL, false, true, true);
+INSERT INTO public.roles (role_id, "name", code, gym_id, full_access, status, is_staff) VALUES(3, 'Administrador', 'Administrador', NULL, false, true, true);
 
 INSERT INTO sexos (sexo_id, name, code, status) VALUES
 (1, 'Masculino', 'M', true),
@@ -20,7 +18,7 @@ INSERT INTO type_documents (type_document_id, name, code, status) VALUES
 
 
 INSERT INTO countries (country_id, name, code, status) values
-(1, 'Colombia', 'CO', true),
+(1, 'Colombia', 'CO', true);
 
 INSERT INTO public.departaments (departament_id, contry_id, "name", status) VALUES(5, 1, 'Antioquia', true);
 INSERT INTO public.departaments (departament_id, contry_id, "name", status) VALUES(8, 1, 'Atlantico', true);
