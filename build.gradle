@@ -47,6 +47,9 @@ dependencies {
 	// Stripe
 	implementation 'com.stripe:stripe-java:26.3.0'
 
+	// Cloudinary
+	implementation 'com.cloudinary:cloudinary-http45:1.39.0'
+
 	// Rate limiting
 	implementation 'com.bucket4j:bucket4j-core:8.10.1'
 

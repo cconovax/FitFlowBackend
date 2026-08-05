@@ -28,8 +28,8 @@ public record PeopleRequest(
 		@Size(max = 60, message = "El email no puede exceder 60 caracteres")
 		String email,
 
-		@Schema(description = "Foto (opcional). Si no se envía, se asigna una por defecto", example = "/uploads/logo/profile-default.svg")
-		@Size(max = 60, message = "La foto no puede exceder 60 caracteres")
+		@Schema(description = "Foto (opcional). Si no se envía, se asigna una por defecto", example = "https://res.cloudinary.com/demo/image/upload/sample.jpg")
+		@Size(max = 500, message = "La foto no puede exceder 500 caracteres")
 		String photo,
 
 		@Schema(description = "ID del municipio", example = "1")

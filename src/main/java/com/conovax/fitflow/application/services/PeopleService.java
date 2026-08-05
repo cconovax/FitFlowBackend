@@ -11,22 +11,27 @@ import com.conovax.fitflow.domain.repositories.MunicipalityRepository;
 import com.conovax.fitflow.domain.repositories.PeopleRepository;
 import com.conovax.fitflow.domain.repositories.SexoRepository;
 import com.conovax.fitflow.domain.repositories.TypeDocumentRepository;
+import com.conovax.fitflow.infrastructure.storage.FileStorageService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
 public class PeopleService {
 
-	private static final String DEFAULT_PROFILE_PHOTO_URL = "/uploads/logo/profile-default.svg";
+	@Value("${cloudinary.default-profile-photo-url}")
+	private String defaultProfilePhotoUrl;
 
 	private final PeopleRepository peopleRepository;
 	private final MunicipalityRepository municipalityRepository;
 	private final SexoRepository sexoRepository;
 	private final TypeDocumentRepository typeDocumentRepository;
+	private final FileStorageService fileStorageService;
 
 	@Transactional(readOnly = true)
 	public PageResponse<PeopleResponse> getAll(Integer page, Integer size) {
@@ -56,7 +61,7 @@ public class PeopleService {
 		validateDuplicatesOnCreate(request.numDocument(), request.email());
 
 		String photo = (request.photo() == null || request.photo().isBlank())
-				? DEFAULT_PROFILE_PHOTO_URL
+				? defaultProfilePhotoUrl
 				: request.photo();
 
 		People entity = People.builder()
@@ -87,7 +92,7 @@ public class PeopleService {
 		if (request.photo() != null && !request.photo().isBlank()) {
 			photo = request.photo();
 		} else if (photo == null || photo.isBlank()) {
-			photo = DEFAULT_PROFILE_PHOTO_URL;
+			photo = defaultProfilePhotoUrl;
 		}
 
 		People updated = entity.toBuilder()
@@ -117,6 +122,14 @@ public class PeopleService {
 		People entity = peopleRepository.findByIdAndStatusFalse(peopleId)
 				.orElseThrow(() -> new ResourceNotFoundException("People no encontrado con ID: " + peopleId));
 		peopleRepository.save(entity.toBuilder().status(true).build());
+	}
+
+	@Transactional
+	public PeopleResponse updatePhoto(Long peopleId, MultipartFile photo) {
+		People entity = peopleRepository.findByIdAndStatusTrue(peopleId)
+				.orElseThrow(() -> new ResourceNotFoundException("People no encontrado con ID: " + peopleId));
+		String photoUrl = fileStorageService.storePeoplePhoto(photo);
+		return toResponse(peopleRepository.save(entity.toBuilder().photo(photoUrl).build()));
 	}
 
 	@Transactional

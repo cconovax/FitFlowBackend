@@ -17,16 +17,20 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/v1/peoples")
@@ -91,6 +95,16 @@ public class PeopleController {
 	@Operation(summary = "Actualizar People", description = "Actualiza una persona activa")
 	public ResponseEntity<PeopleResponse> update(@PathVariable Long peopleId, @Valid @RequestBody PeopleRequest request) {
 		return ResponseEntity.ok(peopleService.update(peopleId, request));
+	}
+
+	@PatchMapping(value = "/{peopleId}/photo", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@RequirePermission("edit:user:gym")
+	@Operation(summary = "Actualizar foto de perfil", description = "Sube una nueva foto de perfil a Cloudinary")
+	public ResponseEntity<PeopleResponse> updatePhoto(
+			@PathVariable Long peopleId,
+			@RequestPart("photo") MultipartFile photo
+	) {
+		return ResponseEntity.ok(peopleService.updatePhoto(peopleId, photo));
 	}
 
 	@DeleteMapping("/{peopleId}")

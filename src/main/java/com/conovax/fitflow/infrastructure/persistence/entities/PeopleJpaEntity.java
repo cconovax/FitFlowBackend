@@ -24,13 +24,13 @@ public class PeopleJpaEntity {
 	@Column(nullable = false, length = 60)
 	private String surnames;
 
-	@Column(length = 13)
+	@Column(length = 30)
 	private String phone;
 
 	@Column(length = 60)
 	private String email;
 
-	@Column(nullable = false, length = 60)
+	@Column(nullable = false, length = 254)
 	private String photo;
 
 	@Column(name = "municipalitie_id", nullable = false)
