@@ -52,6 +52,7 @@ public class FileStorageService {
 			Files.createDirectories(targetDir);
 			file.transferTo(targetFile.toFile());
 		} catch (IOException e) {
+            e.printStackTrace();
 			throw new IllegalStateException("No se pudo guardar la imagen", e);
 		}
 
