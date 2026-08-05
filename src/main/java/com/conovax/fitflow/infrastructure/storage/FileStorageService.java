@@ -10,14 +10,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 @Service
 public class FileStorageService {
 
 	private final Path uploadDir;
 
-	public FileStorageService(@Value("${app.upload.dir:uploads}") String uploadDir, Logger log) {
+	public FileStorageService(@Value("${app.upload.dir:uploads}") String uploadDir) {
 		this.uploadDir = Paths.get(uploadDir).toAbsolutePath().normalize();
         System.out.println("UPLOAD DIR: " + this.uploadDir);
 	}
