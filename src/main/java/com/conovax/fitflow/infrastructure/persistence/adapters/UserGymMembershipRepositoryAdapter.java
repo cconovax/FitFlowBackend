@@ -60,6 +60,21 @@ public class UserGymMembershipRepositoryAdapter implements UserGymMembershipRepo
 	}
 
 	@Override
+	public long countActiveMembershipsByGymId(Long gymId, LocalDate today) {
+		return jpaRepository.countActiveMembershipsByGymId(gymId, today);
+	}
+
+	@Override
+	public long countMembershipsByGymIdAndDateRange(Long gymId, LocalDate from, LocalDate to) {
+		return jpaRepository.countMembershipsByGymIdAndDateRange(gymId, from, to);
+	}
+
+	@Override
+	public List<Object[]> findMembershipDistributionByGymId(Long gymId, LocalDate today) {
+		return jpaRepository.findMembershipDistributionByGymId(gymId, today);
+	}
+
+	@Override
 	public UserGymMembership save(UserGymMembership entity) {
 		UserGymMembershipJpaEntity saved = jpaRepository.save(mapper.toJpaEntity(entity));
 		return mapper.toDomain(saved);

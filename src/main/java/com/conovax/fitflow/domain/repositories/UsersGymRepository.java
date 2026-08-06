@@ -38,4 +38,8 @@ public interface UsersGymRepository {
 	java.util.Optional<UserGymUserPeople> findUserGymPeopleById(Long userGymId);
 
 	java.util.List<UserGymUserPeople> findTrainersByGymId(Long gymId, String search);
+
+	long countActiveByGymId(Long gymId);
+
+	long countTotalByGymId(Long gymId);
 }

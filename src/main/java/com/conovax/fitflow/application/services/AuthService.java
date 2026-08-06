@@ -22,6 +22,7 @@ import com.conovax.fitflow.infrastructure.security.GymAuthenticationDetails;
 import com.conovax.fitflow.infrastructure.security.UserDetailsImpl;
 import com.conovax.fitflow.infrastructure.security.jwt.JwtUtils;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -38,7 +39,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AuthService {
 
-	private static final String DEFAULT_PROFILE_PHOTO_URL = "/uploads/logo/profile-default.svg";
+    @Value("${cloudinary.default-profile-photo-url}")
+	private String DEFAULT_PROFILE_PHOTO_URL;
 
 	private final UserRepository userRepository;
 	private final MunicipalityRepository municipalityRepository;

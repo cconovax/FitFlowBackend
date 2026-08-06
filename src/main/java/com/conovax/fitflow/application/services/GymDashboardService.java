@@ -6,10 +6,10 @@ import com.conovax.fitflow.domain.entities.Gym;
 import com.conovax.fitflow.domain.exceptions.ResourceNotFoundException;
 import com.conovax.fitflow.domain.repositories.GymRepository;
 import com.conovax.fitflow.domain.repositories.MunicipalityRepository;
-import com.conovax.fitflow.infrastructure.persistence.repositories.SaleJpaRepository;
-import com.conovax.fitflow.infrastructure.persistence.repositories.SessionLogJpaRepository;
-import com.conovax.fitflow.infrastructure.persistence.repositories.UserGymMembershipJpaRepository;
-import com.conovax.fitflow.infrastructure.persistence.repositories.UsersGymJpaRepository;
+import com.conovax.fitflow.domain.repositories.SaleRepository;
+import com.conovax.fitflow.domain.repositories.SessionLogRepository;
+import com.conovax.fitflow.domain.repositories.UserGymMembershipRepository;
+import com.conovax.fitflow.domain.repositories.UsersGymRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,10 +28,10 @@ public class GymDashboardService {
 	private final GymRepository gymRepository;
 	private final MunicipalityRepository municipalityRepository;
 	private final GymSubscriptionService gymSubscriptionService;
-	private final UsersGymJpaRepository usersGymJpaRepository;
-	private final UserGymMembershipJpaRepository userGymMembershipJpaRepository;
-	private final SaleJpaRepository saleJpaRepository;
-	private final SessionLogJpaRepository sessionLogJpaRepository;
+	private final UsersGymRepository usersGymRepository;
+	private final UserGymMembershipRepository userGymMembershipRepository;
+	private final SaleRepository saleRepository;
+	private final SessionLogRepository sessionLogRepository;
 
 	@Transactional(readOnly = true)
 	public GymDashboardResponse getDashboard(Long gymId) {
@@ -56,18 +56,18 @@ public class GymDashboardService {
 		LocalDateTime chartEnd = today.atTime(LocalTime.MAX);
 
 		// ── Stats ─────────────────────────────────────────────────────
-		long totalActiveMembers = usersGymJpaRepository.countActiveByGymId(gymId);
-		long totalMembersAllTime = usersGymJpaRepository.countTotalByGymId(gymId);
-		long activeMemberships = userGymMembershipJpaRepository.countActiveMembershipsByGymId(gymId, today);
-		long membershipsThisMonth = userGymMembershipJpaRepository.countMembershipsByGymIdAndDateRange(
+		long totalActiveMembers = usersGymRepository.countActiveByGymId(gymId);
+		long totalMembersAllTime = usersGymRepository.countTotalByGymId(gymId);
+		long activeMemberships = userGymMembershipRepository.countActiveMembershipsByGymId(gymId, today);
+		long membershipsThisMonth = userGymMembershipRepository.countMembershipsByGymIdAndDateRange(
 				gymId, firstOfMonth, lastOfMonth);
 
-		BigDecimal revenueTotal = saleJpaRepository.sumTotalRevenueByGymId(gymId);
-		BigDecimal revenueThisMonth = saleJpaRepository.sumRevenueByGymIdAndDateRange(gymId, monthStart, monthEnd);
-		long salesCountThisMonth = saleJpaRepository.countSalesByGymIdAndDateRange(gymId, monthStart, monthEnd);
+		BigDecimal revenueTotal = saleRepository.sumTotalRevenueByGymId(gymId);
+		BigDecimal revenueThisMonth = saleRepository.sumRevenueByGymIdAndDateRange(gymId, monthStart, monthEnd);
+		long salesCountThisMonth = saleRepository.countSalesByGymIdAndDateRange(gymId, monthStart, monthEnd);
 
-		long sessionsToday = sessionLogJpaRepository.countSessionsTodayByGymId(gymId, today);
-		long sessionsThisMonth = sessionLogJpaRepository.countSessionsByGymIdAndDateRange(
+		long sessionsToday = sessionLogRepository.countSessionsTodayByGymId(gymId, today);
+		long sessionsThisMonth = sessionLogRepository.countSessionsByGymIdAndDateRange(
 				gymId, firstOfMonth, lastOfMonth);
 
 		GymDashboardResponse.StatsInfo stats = new GymDashboardResponse.StatsInfo(
@@ -83,7 +83,7 @@ public class GymDashboardService {
 		);
 
 		// ── Daily sessions (last 30 days) ─────────────────────────────
-		List<Object[]> rawSessions = sessionLogJpaRepository.findDailySessionsByGymId(
+		List<Object[]> rawSessions = sessionLogRepository.findDailySessionsByGymId(
 				gymId, thirtyDaysAgo, today);
 		List<GymDashboardResponse.DailyPoint> dailySessions = new ArrayList<>();
 		for (Object[] row : rawSessions) {
@@ -93,7 +93,7 @@ public class GymDashboardService {
 		}
 
 		// ── Daily sales (last 30 days) ────────────────────────────────
-		List<Object[]> rawSales = saleJpaRepository.findDailySalesByGymId(gymId, chartStart, chartEnd);
+		List<Object[]> rawSales = saleRepository.findDailySalesByGymId(gymId, chartStart, chartEnd);
 		List<GymDashboardResponse.DailySalesPoint> dailySales = new ArrayList<>();
 		for (Object[] row : rawSales) {
 			LocalDate date = toLocalDate(row[0]);
@@ -103,7 +103,7 @@ public class GymDashboardService {
 		}
 
 		// ── Membership distribution ───────────────────────────────────
-		List<Object[]> rawDist = userGymMembershipJpaRepository.findMembershipDistributionByGymId(gymId, today);
+		List<Object[]> rawDist = userGymMembershipRepository.findMembershipDistributionByGymId(gymId, today);
 		List<GymDashboardResponse.MembershipStat> membershipStats = new ArrayList<>();
 		for (Object[] row : rawDist) {
 			String name = row[0] != null ? row[0].toString() : "Desconocida";

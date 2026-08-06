@@ -4,7 +4,9 @@ import com.conovax.fitflow.domain.entities.Sale;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 public interface SaleRepository {
@@ -16,4 +18,12 @@ public interface SaleRepository {
 	Page<Sale> findAllByGymIdAndStatusTrue(Long gymId, Pageable pageable);
 
 	Page<Sale> findByGymIdAndDateRange(Long gymId, LocalDateTime from, LocalDateTime to, Pageable pageable);
+
+	BigDecimal sumTotalRevenueByGymId(Long gymId);
+
+	BigDecimal sumRevenueByGymIdAndDateRange(Long gymId, LocalDateTime from, LocalDateTime to);
+
+	long countSalesByGymIdAndDateRange(Long gymId, LocalDateTime from, LocalDateTime to);
+
+	List<Object[]> findDailySalesByGymId(Long gymId, LocalDateTime from, LocalDateTime to);
 }

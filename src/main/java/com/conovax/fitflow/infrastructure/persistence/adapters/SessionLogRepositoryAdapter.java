@@ -6,6 +6,7 @@ import com.conovax.fitflow.infrastructure.persistence.repositories.SessionLogJpa
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -25,5 +26,20 @@ public class SessionLogRepositoryAdapter implements SessionLogRepository {
 						.endDate(e.getEndDate())
 						.build())
 				.toList();
+	}
+
+	@Override
+	public long countSessionsTodayByGymId(Long gymId, LocalDate today) {
+		return jpaRepository.countSessionsTodayByGymId(gymId, today);
+	}
+
+	@Override
+	public long countSessionsByGymIdAndDateRange(Long gymId, LocalDate from, LocalDate to) {
+		return jpaRepository.countSessionsByGymIdAndDateRange(gymId, from, to);
+	}
+
+	@Override
+	public List<Object[]> findDailySessionsByGymId(Long gymId, LocalDate from, LocalDate to) {
+		return jpaRepository.findDailySessionsByGymId(gymId, from, to);
 	}
 }

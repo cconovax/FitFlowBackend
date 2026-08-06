@@ -116,6 +116,16 @@ public class UsersGymRepositoryAdapter implements UsersGymRepository {
 				.toList();
 	}
 
+	@Override
+	public long countActiveByGymId(Long gymId) {
+		return jpaRepository.countActiveByGymId(gymId);
+	}
+
+	@Override
+	public long countTotalByGymId(Long gymId) {
+		return jpaRepository.countTotalByGymId(gymId);
+	}
+
 	private UserGymUserPeople toUserGymUserPeople(UserGymUserPeopleProjection projection) {
 		return UserGymUserPeople.builder()
 				.userGymId(projection.getUserGymId())
