@@ -96,6 +96,11 @@ public class UserRepositoryAdapter implements UserRepository {
 	}
 
 	@Override
+	public void updatePassword(Long userId, String encodedPassword) {
+		jpaRepository.updatePasswordById(userId, encodedPassword);
+	}
+
+	@Override
 	public void deleteById(Long id) {
 		jpaRepository.deleteById(id);
 	}

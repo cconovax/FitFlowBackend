@@ -77,6 +77,9 @@ public class SecurityConfig {
                                     "/api/v1/auth/login/gym",
                                     "/api/v1/auth/register",
                                     "/api/v1/auth/logout",
+                                    "/api/v1/auth/forgot-password",
+                                    "/api/v1/auth/reset-password",
+                                    "/api/v1/auth/reset-password/validate",
                                     "/api/v1/users/gyms",
                                     "/api/v1/onboarding/register"
                             ).permitAll()

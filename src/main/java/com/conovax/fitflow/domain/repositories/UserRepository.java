@@ -33,7 +33,9 @@ public interface UserRepository {
     boolean existsByEmail(String email);
 
     boolean existsByNumDocument(String numDocument);
-    
+
+    void updatePassword(Long userId, String encodedPassword);
+
     void deleteById(Long id);
     long count();
     boolean existsById(Long id);

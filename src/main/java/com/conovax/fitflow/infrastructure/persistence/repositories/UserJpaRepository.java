@@ -3,6 +3,7 @@ package com.conovax.fitflow.infrastructure.persistence.repositories;
 import com.conovax.fitflow.infrastructure.persistence.entities.UserJpaEntity;
 import com.conovax.fitflow.infrastructure.persistence.projections.GymInfoProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -45,4 +46,8 @@ public interface UserJpaRepository extends JpaRepository<UserJpaEntity, Long> {
 	boolean existsByPeople_NumDocument(String numDocument);
 
 	Optional<UserJpaEntity> findByPeople_NumDocument(String numDocument);
+
+	@Modifying
+	@Query("UPDATE UserJpaEntity u SET u.password = :password WHERE u.id = :userId")
+	void updatePasswordById(@Param("userId") Long userId, @Param("password") String password);
 }

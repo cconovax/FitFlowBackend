@@ -22,6 +22,7 @@ import com.conovax.fitflow.infrastructure.security.GymAuthenticationDetails;
 import com.conovax.fitflow.infrastructure.security.UserDetailsImpl;
 import com.conovax.fitflow.infrastructure.security.jwt.JwtUtils;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -33,8 +34,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -43,6 +46,7 @@ public class AuthService {
 	private String DEFAULT_PROFILE_PHOTO_URL;
 
 	private final UserRepository userRepository;
+	private final EmailService emailService;
 	private final MunicipalityRepository municipalityRepository;
 	private final SexoRepository sexoRepository;
 	private final TypeDocumentRepository typeDocumentRepository;
@@ -122,7 +126,19 @@ public class AuthService {
 		if (user.getId() == null) {
 			throw new IllegalStateException("No se pudo registrar el usuario (sin ID)");
 		}
+
+		sendWelcomeEmail(request.email(), request.names());
+
 		return mapToUserResponse(user);
+	}
+
+	private void sendWelcomeEmail(String email, String names) {
+		if (email == null || email.isBlank()) return;
+		try {
+			emailService.sendEmail(email, "welcome", Map.of("userName", names));
+		} catch (Exception e) {
+			log.warn("No se pudo enviar el email de bienvenida a {}: {}", email, e.getMessage());
+		}
 	}
 
 	private void validateForeignKeys(Long municipalitieId, Long sexoId, Long typeDocumentId) {

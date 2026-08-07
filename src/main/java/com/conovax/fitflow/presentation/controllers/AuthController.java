@@ -1,11 +1,14 @@
 package com.conovax.fitflow.presentation.controllers;
 
+import com.conovax.fitflow.application.dto.request.ForgotPasswordRequest;
 import com.conovax.fitflow.application.dto.request.LoginWithGymRequest;
 import com.conovax.fitflow.application.dto.request.RegisterRequest;
+import com.conovax.fitflow.application.dto.request.ResetPasswordRequest;
 import com.conovax.fitflow.application.dto.response.AuthGymResponse;
 import com.conovax.fitflow.application.dto.response.CurrentUserResponse;
 import com.conovax.fitflow.application.dto.response.UserResponse;
 import com.conovax.fitflow.application.services.AuthService;
+import com.conovax.fitflow.application.services.PasswordResetService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -25,14 +28,16 @@ import java.util.Map;
 public class AuthController {
 
     private final AuthService authService;
+    private final PasswordResetService passwordResetService;
 
     @Value("${jwt.expiration:86400000}")
     private long jwtExpirationMs;
 
     private final Environment env;
 
-    public AuthController(AuthService authService, Environment env) {
+    public AuthController(AuthService authService, PasswordResetService passwordResetService, Environment env) {
         this.authService = authService;
+        this.passwordResetService = passwordResetService;
         this.env = env;
     }
 
@@ -78,6 +83,27 @@ public class AuthController {
     public ResponseEntity<CurrentUserResponse> getCurrentUser() {
         CurrentUserResponse response = authService.getCurrentUser();
         return ResponseEntity.ok(response);
+    }
+
+    /** Solicita el email de restablecimiento. Siempre devuelve 200 para no filtrar si el email existe. */
+    @PostMapping("/forgot-password")
+    public ResponseEntity<Void> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
+        passwordResetService.requestReset(request.email());
+        return ResponseEntity.ok().build();
+    }
+
+    /** Valida el token antes de mostrar el formulario de nueva contraseña. */
+    @GetMapping("/reset-password/validate")
+    public ResponseEntity<Void> validateResetToken(@RequestParam String token) {
+        passwordResetService.validateToken(token);
+        return ResponseEntity.ok().build();
+    }
+
+    /** Restablece la contraseña con el token del email. */
+    @PostMapping("/reset-password")
+    public ResponseEntity<Void> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
+        passwordResetService.resetPassword(request.token(), request.newPassword());
+        return ResponseEntity.ok().build();
     }
 
     private ResponseCookie buildAuthCookie(String token) {

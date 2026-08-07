@@ -53,6 +53,9 @@ dependencies {
 	// Rate limiting
 	implementation 'com.bucket4j:bucket4j-core:8.10.1'
 
+	// Freemarker — motor de plantillas para emails
+	implementation 'org.freemarker:freemarker:2.3.34'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
