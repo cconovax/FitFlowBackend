@@ -45,6 +45,9 @@ public class AuthService {
     @Value("${cloudinary.default-profile-photo-url}")
 	private String DEFAULT_PROFILE_PHOTO_URL;
 
+    @Value("${app.reset-password.base-url}")
+    private String URL_FRONTEND_LOGIN;
+
 	private final UserRepository userRepository;
 	private final EmailService emailService;
 	private final MunicipalityRepository municipalityRepository;
@@ -135,7 +138,10 @@ public class AuthService {
 	private void sendWelcomeEmail(String email, String names) {
 		if (email == null || email.isBlank()) return;
 		try {
-			emailService.sendEmail(email, "welcome", Map.of("userName", names));
+			emailService.sendEmail(email, "welcome", Map.of(
+                    "userName", names,
+                    "loginUrl", URL_FRONTEND_LOGIN+"/login"
+                    ));
 		} catch (Exception e) {
 			log.warn("No se pudo enviar el email de bienvenida a {}: {}", email, e.getMessage());
 		}

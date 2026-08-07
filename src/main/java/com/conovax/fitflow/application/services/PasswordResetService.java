@@ -57,7 +57,7 @@ public class PasswordResetService {
 					"expirationMinutes", String.valueOf(expirationMinutes)
 			));
 
-			log.info("Password reset requested for user {}", user.getId());
+			log.info("Password restablecido por el usuario con ID: {}", user.getId());
 		});
 	}
 
@@ -87,6 +87,6 @@ public class PasswordResetService {
 		userRepository.updatePassword(resetToken.getUserId(), passwordEncoder.encode(newPassword));
 		tokenRepository.save(resetToken.toBuilder().used(true).build());
 
-		log.info("Password reset completed for user {}", resetToken.getUserId());
+		log.info("Password restablecido exitosamente por el usuario con ID {}", resetToken.getUserId());
 	}
 }
