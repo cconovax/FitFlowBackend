@@ -1,0 +1,16 @@
+package com.conovax.fitflow.subscription.domain.repositories;
+
+import com.conovax.fitflow.subscription.domain.entities.GymSubscription;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface GymSubscriptionRepository {
+	GymSubscription save(GymSubscription subscription);
+
+	Optional<GymSubscription> findById(Long id);
+
+	List<GymSubscription> findAllByGymIdOrderByEndDateDescIdDesc(Long gymId);
+
+	boolean existsByGymIdAndSaasPlanId(Long gymId, Long saasPlanId);
+}

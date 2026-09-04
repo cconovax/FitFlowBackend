@@ -442,6 +442,16 @@ CREATE TABLE IF NOT EXISTS gym_payment_orders (
 );
 
 
+
+CREATE TABLE IF NOT EXISTS email_templates (
+    id         BIGSERIAL    PRIMARY KEY,
+    code       VARCHAR(100) NOT NULL UNIQUE,
+    subject    VARCHAR(255) NOT NULL,
+    html       TEXT         NOT NULL,
+    enabled    BOOLEAN      NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMP    NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP    NOT NULL DEFAULT NOW()
+);
 -- ============================================================
 --  PERFORMANCE INDEXES
 --  Ejecutar una sola vez en producción / staging
