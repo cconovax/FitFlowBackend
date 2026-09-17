@@ -1,7 +1,28 @@
-INSERT INTO email_templates (code, subject, html, created_at,enabled, updated_at) VALUES (
-    'welcome',
-    'Bienvenido a FitFlow, ${userName}',
-    '<!DOCTYPE html
+--
+-- PostgreSQL database dump
+--
+
+
+-- Dumped from database version 18.0
+-- Dumped by pg_dump version 18.0
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Data for Name: email_templates; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.email_templates (id, code, created_at, enabled, html, subject, updated_at) VALUES (12, 'welcome', '2026-09-01 22:56:25.258495', true, '<!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 
@@ -360,14 +381,8 @@ INSERT INTO email_templates (code, subject, html, created_at,enabled, updated_at
 
 </body>
 
-</html>', now(), true, now()
-) ON CONFLICT (code) DO UPDATE SET subject = EXCLUDED.subject, html = EXCLUDED.html, updated_at = NOW();
-
--- Ejemplo: plantilla de membresía asignada
-INSERT INTO email_templates (code, subject, html, created_at,enabled, updated_at) VALUES (
-    'membership_assigned',
-    'Tu membresía ${membershipName} está activa',
-    '<!DOCTYPE html
+</html>', 'Bienvenido a FitFlow, ${userName}', '2026-09-01 22:56:25.258495') ON CONFLICT DO NOTHING;
+INSERT INTO public.email_templates (id, code, created_at, enabled, html, subject, updated_at) VALUES (13, 'membership_assigned', '2026-09-01 22:56:25.258495', true, '<!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 
@@ -809,16 +824,8 @@ INSERT INTO email_templates (code, subject, html, created_at,enabled, updated_at
 
 </body>
 
-</html>', now(), true, now()
-) ON CONFLICT (code) DO UPDATE SET subject = EXCLUDED.subject, html = EXCLUDED.html, updated_at = NOW();
-
-
-
-
-INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_at) VALUES (
-    'password_reset',
-    'Restablecer contraseña — FitFlow',
-    '<!DOCTYPE html
+</html>', 'Tu membresía ${membershipName} está activa', '2026-09-01 22:56:25.258495') ON CONFLICT DO NOTHING;
+INSERT INTO public.email_templates (id, code, created_at, enabled, html, subject, updated_at) VALUES (14, 'password_reset', '2026-09-01 22:56:25.258495', true, '<!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 
@@ -1185,16 +1192,8 @@ INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_a
 
 </body>
 
-</html>', now(), true, now()
-) ON CONFLICT (code) DO UPDATE SET subject = EXCLUDED.subject, html = EXCLUDED.html, updated_at = NOW();
-
-
-
-
-INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_at) VALUES (
-    'gym_subscription_activated',
-    'Tu suscripción ${planName} está activa — FitFlow',
-    '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+</html>', 'Restablecer contraseña — FitFlow', '2026-09-01 22:56:25.258495') ON CONFLICT DO NOTHING;
+INSERT INTO public.email_templates (id, code, created_at, enabled, html, subject, updated_at) VALUES (15, 'gym_subscription_activated', '2026-09-01 22:56:25.258495', true, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -1329,16 +1328,8 @@ INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_a
   </table>
 
 </body>
-</html>', now(), true, now()
-) ON CONFLICT (code) DO UPDATE SET subject = EXCLUDED.subject, html = EXCLUDED.html, updated_at = NOW();;
-
-
-
-
-INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_at) VALUES (
-    'membership_activated',
-    'Tu membresía ${membershipName} está activa — FitFlow',
-    '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+</html>', 'Tu suscripción ${planName} está activa — FitFlow', '2026-09-01 22:56:25.258495') ON CONFLICT DO NOTHING;
+INSERT INTO public.email_templates (id, code, created_at, enabled, html, subject, updated_at) VALUES (16, 'membership_activated', '2026-09-01 22:56:25.258495', true, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -1473,14 +1464,8 @@ INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_a
   </table>
 
 </body>
-</html>', now(), true, now()
-)ON CONFLICT (code) DO UPDATE SET subject = EXCLUDED.subject, html = EXCLUDED.html, updated_at = NOW();
-
-
-INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_at) VALUES (
-    'login_notification',
-    'Nuevo inicio de sesion',
-    '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+</html>', 'Tu membresía ${membershipName} está activa — FitFlow', '2026-09-01 22:56:25.258495') ON CONFLICT DO NOTHING;
+INSERT INTO public.email_templates (id, code, created_at, enabled, html, subject, updated_at) VALUES (17, 'login_notification', '2026-09-02 16:18:13.278242', true, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -1530,7 +1515,7 @@ INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_a
                   <td align="center">
                     <h1 style="font-family:''Poppins'',Arial,sans-serif;font-size:22px;font-weight:700;color:#f1f5f9;margin:0 0 10px;letter-spacing:-0.4px;">¡Nuevo inicio de sesion!</h1>
                     <p style="font-family:''Poppins'',Arial,sans-serif;font-size:15px;color:#94a3b8;margin:0;line-height:1.65;">
-                      Hola <strong style="color:#e2e8f0;">${userName}</strong>, acabas de iniciar sesion en el gimnasio <strong style="color:#e2e8f0;">${gymName}</strong> el <strong style="color:#cbd5e1;">${date}</strong>
+                      Hola <strong style="color:#e2e8f0;">${userName}</strong>, acabas de iniciar sesion en el gimnasio <strong style="color:#e2e8f0;">${gymName}</strong> a las <strong style="color:#cbd5e1;">${date}</strong>
                     </p>
                   </td>
                 </tr>
@@ -1564,5 +1549,18 @@ INSERT INTO email_templates (code, subject, html, created_at, enabled, updated_a
   </table>
 
 </body>
-</html>', now(), true, now()
-)ON CONFLICT (code) DO UPDATE SET subject = EXCLUDED.subject, html = EXCLUDED.html, updated_at = NOW();
+</html>', 'Nuevo inicio de sesion', '2026-09-02 16:18:13.278242') ON CONFLICT DO NOTHING;
+
+
+--
+-- Name: email_templates_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.email_templates_id_seq', 17, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
+
