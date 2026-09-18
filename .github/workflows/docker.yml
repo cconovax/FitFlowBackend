@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
+      - develop
 
   pull_request:
     branches:
       - main
+      - develop
 
 permissions:
   contents: read
@@ -15,6 +17,21 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: fitflow_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd=pg_isready
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
     steps:
       - name: Checkout
@@ -35,6 +52,16 @@ jobs:
         with:
           name: test-results
           path: build/reports/tests/test
+
+      - name: Validar migraciones Flyway (ADR 0004)
+        run: |
+          docker run --rm --network host \
+            -v ${{ github.workspace }}/src/main/resources/db/migration:/flyway/sql \
+            flyway/flyway:10 \
+            -url=jdbc:postgresql://localhost:5432/fitflow_ci \
+            -user=postgres -password=postgres \
+            -connectRetries=10 \
+            migrate
 
 
   docker:
