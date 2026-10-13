@@ -55,6 +55,18 @@ public class UserGymMembershipService {
 	private final NotificationService notificationService;
 
 	@Transactional(readOnly = true)
+	public boolean userGymBelongsToGym(Long gymId, Long userGymId) {
+		return userGymId != null && gymId != null
+				&& repository.existsUserGymByGymIdAndUserGymId(gymId, userGymId);
+	}
+
+	@Transactional(readOnly = true)
+	public boolean hasActiveMembership(Long gymId, Long userGymId, LocalDate today) {
+		return userGymId != null && gymId != null
+				&& repository.existsActiveMembershipByGymIdAndUserGymId(gymId, userGymId, today);
+	}
+
+	@Transactional(readOnly = true)
 	public List<UserGymMembershipDetailResponse> getAllByUserGymIdAndGymId(Long userGymId, Long gymId) {
 		UsersGym userGym = usersGymRepository.findByIdAndStatusTrue(userGymId)
 				.orElseThrow(() -> new ResourceNotFoundException("No tienes una membresia relacionada a este gimnasio"));

@@ -39,6 +39,16 @@ public class UserGymMembershipRepositoryAdapter implements UserGymMembershipRepo
 	}
 
 	@Override
+	public boolean existsUserGymByGymIdAndUserGymId(Long gymId, Long userGymId) {
+		return jpaRepository.existsUserGymByGymIdAndUserGymId(gymId, userGymId);
+	}
+
+	@Override
+	public boolean existsActiveMembershipByGymIdAndUserGymId(Long gymId, Long userGymId, LocalDate today) {
+		return jpaRepository.existsActiveMembershipByGymIdAndUserGymId(gymId, userGymId, today);
+	}
+
+	@Override
 	public boolean existsActiveMembershipByUserGymId(Long userGymId, LocalDate today) {
 		return jpaRepository.existsByUserGymIdAndStatusTrueAndEndDateGreaterThanEqual(userGymId, today);
 	}
