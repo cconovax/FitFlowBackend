@@ -10,4 +10,5 @@ public record ScheduleRequest(
         @NotNull LocalTime startTime,
         @NotNull LocalTime endTime,
         @NotNull @Positive Integer capacity,
+        @NotNull(message = "trainerUserGymId es obligatorio") @Positive Long trainerUserGymId,
         @Pattern(regexp = "ACTIVE|INACTIVE") String status) {}

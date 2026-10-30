@@ -18,6 +18,7 @@ public class ClassScheduleJpaEntity {
     @Column(name = "start_time", nullable = false) private LocalTime startTime;
     @Column(name = "end_time", nullable = false) private LocalTime endTime;
     @Column(nullable = false) private Integer capacity;
+    @Column(name = "trainer_user_gym_id") private Long trainerUserGymId;
     @Column(nullable = false, length = 20) private String status;
     @Column(name = "created_at", nullable = false) private LocalDateTime createdAt;
     @Column(name = "updated_at", nullable = false) private LocalDateTime updatedAt;

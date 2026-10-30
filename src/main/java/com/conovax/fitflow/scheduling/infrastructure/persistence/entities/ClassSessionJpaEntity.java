@@ -15,6 +15,7 @@ public class ClassSessionJpaEntity {
     @Column(name = "starts_at", nullable = false) private LocalDateTime startsAt;
     @Column(name = "ends_at", nullable = false) private LocalDateTime endsAt;
     @Column(nullable = false) private Integer capacity;
+    @Column(name = "trainer_user_gym_id") private Long trainerUserGymId;
     @Column(nullable = false, length = 20) private String status;
     @Column(name = "created_at", nullable = false) private LocalDateTime createdAt;
 }

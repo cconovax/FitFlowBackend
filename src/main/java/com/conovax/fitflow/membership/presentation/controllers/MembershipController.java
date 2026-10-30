@@ -61,7 +61,7 @@ public class MembershipController {
 
 	@PostMapping
 	@Operation(summary = "Crear membresía")
-	@RequirePermission("createmembership:gym")
+	@RequirePermission("create:membership:gym")
 	@RequireActiveGymSubscription
 	public ResponseEntity<MembershipResponse> create(@Valid @RequestBody MembershipRequest request) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.create(request));
@@ -69,7 +69,7 @@ public class MembershipController {
 
 	@PutMapping("/{id}")
 	@Operation(summary = "Actualizar membresía")
-	@RequirePermission("membership:gym:update")
+	@RequirePermission("update:membership:gym")
 	@RequireActiveGymSubscription
 	public ResponseEntity<MembershipResponse> update(
 			@PathVariable Long id,
@@ -80,7 +80,7 @@ public class MembershipController {
 
 	@DeleteMapping("/{id}")
 	@Operation(summary = "Eliminar membresía (lógico)")
-	@RequirePermission("membership:gym:delete")
+	@RequirePermission("delete:membership:gym")
 	@RequireActiveGymSubscription(enforceGymMatch = false)
 	public ResponseEntity<Void> deleteLogical(@PathVariable Long id) {
 		service.deleteLogical(id);
@@ -89,7 +89,7 @@ public class MembershipController {
 
 	@PutMapping("/{id}/reset")
 	@Operation(summary = "Restablecer membresía eliminada")
-	@RequirePermission("membership:gym:reset")
+	@RequirePermission("reset:membership:gym")
 	@RequireActiveGymSubscription(enforceGymMatch = false)
 	public ResponseEntity<Void> reset(@PathVariable Long id) {
 		service.reset(id);
@@ -98,7 +98,7 @@ public class MembershipController {
 
 	@DeleteMapping("/{id}/force")
 	@Operation(summary = "Eliminar membresía (físico)")
-	@RequirePermission("membership:gym:force_delete")
+	@RequirePermission("force:delete:membership:gym")
 	@RequireActiveGymSubscription(enforceGymMatch = false)
 	public ResponseEntity<Void> forceDelete(@PathVariable Long id) {
 		service.forceDelete(id);

@@ -63,6 +63,22 @@ public class RoleService {
 	}
 
 	@Transactional(readOnly = true)
+	public boolean isActiveTrainerOrAdminUserGym(Long gymId, Long userGymId) {
+		if (gymId == null || userGymId == null) {
+			return false;
+		}
+		if (usersGymRepository.findByIdAndGymIdAndStatusTrue(userGymId, gymId).isEmpty()) {
+			return false;
+		}
+
+		List<Long> roleIds = userRoleRepository.findRoleIdsByUserGymId(userGymId);
+		return roleRepository.findAllById(roleIds).stream()
+				.filter(role -> Boolean.TRUE.equals(role.getStatus()))
+				.anyMatch(role -> "Entrenador".equalsIgnoreCase(role.getName())
+						|| "Administrador".equalsIgnoreCase(role.getName()));
+	}
+
+	@Transactional(readOnly = true)
 	public PageResponse<RoleResponse> getRoles(Long gymId, Integer page, Integer size) {
 		Pageable pageable = PaginationUtils.pageable(page, size);
 

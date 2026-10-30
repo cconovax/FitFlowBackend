@@ -1,5 +1,6 @@
 package com.conovax.fitflow.gym.application.services;
 
+import com.conovax.fitflow.gym.application.dto.response.UserGymContact;
 import com.conovax.fitflow.gym.application.dto.response.UserGymUserResponse;
 import com.conovax.fitflow.shared.application.pagination.PageResponse;
 import com.conovax.fitflow.shared.application.pagination.PaginationUtils;
@@ -38,6 +39,39 @@ public class UserGymUsersService {
 		return usersGymRepository.findTrainersByGymId(gymId, search).stream()
 				.map(this::toResponse)
 				.toList();
+	}
+
+	/** user_gyms activos del gym con rol activo Entrenador o Administrador, en formato de contacto mínimo. */
+	@Transactional(readOnly = true)
+	public java.util.List<UserGymContact> getTrainerOrAdminContacts(Long gymId) {
+		return usersGymRepository.findActiveTrainersOrAdminsByGymId(gymId).stream()
+				.map(p -> new UserGymContact(p.getUserGymId(),
+						((p.getNames() == null ? "" : p.getNames()) + " "
+								+ (p.getSurnames() == null ? "" : p.getSurnames())).trim(),
+						p.getEmail()))
+				.toList();
+	}
+
+	/** Resuelve nombre completo y email de user_gyms del gym indicado; los ids de otro gym se omiten. */
+	@Transactional(readOnly = true)
+	public java.util.Map<Long, UserGymContact> getContactsByUserGymIds(Long gymId, java.util.Collection<Long> userGymIds) {
+		java.util.Map<Long, UserGymContact> contacts = new java.util.HashMap<>();
+		if (gymId == null || userGymIds == null) {
+			return contacts;
+		}
+		for (Long userGymId : new java.util.LinkedHashSet<>(userGymIds)) {
+			if (userGymId == null) continue;
+			boolean sameGym = usersGymRepository.findById(userGymId)
+					.map(ug -> gymId.equals(ug.getGymId()))
+					.orElse(false);
+			if (!sameGym) continue;
+			usersGymRepository.findUserGymPeopleById(userGymId).ifPresent(p -> {
+				String fullName = ((p.getNames() == null ? "" : p.getNames()) + " "
+						+ (p.getSurnames() == null ? "" : p.getSurnames())).trim();
+				contacts.put(userGymId, new UserGymContact(userGymId, fullName, p.getEmail()));
+			});
+		}
+		return contacts;
 	}
 
 	private UserGymUserResponse toResponse(UserGymUserPeople p) {

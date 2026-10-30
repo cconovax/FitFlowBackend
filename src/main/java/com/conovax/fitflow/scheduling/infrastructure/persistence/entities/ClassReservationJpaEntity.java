@@ -19,4 +19,10 @@ public class ClassReservationJpaEntity {
     @Column(name = "reserved_at", nullable = false) private LocalDateTime reservedAt;
     @Column(name = "checked_in_at") private LocalDateTime checkedInAt;
     @Column(name = "checked_in_by_user_gym_id") private Long checkedInByUserGymId;
+    @Builder.Default @Column(name = "attendance_confirmation", nullable = false, length = 20) private String attendanceConfirmation = "PENDING";
+    @Column(name = "attendance_confirmed_at") private LocalDateTime attendanceConfirmedAt;
+    @Column(name = "offered_at") private LocalDateTime offeredAt;
+    @Column(name = "offer_expires_at") private LocalDateTime offerExpiresAt;
+    @Builder.Default @Column(name = "offer_count", nullable = false) private Integer offerCount = 0;
+    @Column(name = "offer_result", length = 20) private String offerResult;
 }

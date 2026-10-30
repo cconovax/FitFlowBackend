@@ -9,17 +9,14 @@ INSERT INTO sexos (sexo_id, name, code, status) VALUES
 (2, 'Femenino', 'F', true),
 (3, 'Otro', 'O', true);
 
-
 INSERT INTO type_documents (type_document_id, name, code, status) VALUES
 (1, 'Cédula de ciudadanía', 'CC', true),
 (2, 'Cédula de extranjería', 'CE', true),
 (3, 'Pasaporte', 'PA', true),
 (4, 'Tarjeta de identidad', 'TI', true);
 
-
 INSERT INTO countries (country_id, name, code, status) values
 (1, 'Colombia', 'CO', true);
-
 
 INSERT INTO currencies (currency_id, name, code, status) values
     (1, 'Peso colombiano', 'COP', true);
@@ -1488,12 +1485,12 @@ INSERT INTO public.saas_features (saas_feature_id, code, description, feature_ty
 INSERT INTO public.saas_features (saas_feature_id, code, description, feature_type, "name", status) VALUES(8, 'ADVANCED_REPORTS', 'Permite generar reportes de inventarios', 'MODULE', 'Reportes de inventarios', true);
 INSERT INTO public.saas_features (saas_feature_id, code, description, feature_type, "name", status) VALUES(6, 'BARCODE_ACCESS', 'Permite vender productos con scaners de codigos de barra', 'MODULE', 'Venta de productos con scaners de codigos de barra', true);
 INSERT INTO public.saas_features (saas_feature_id, code, description, feature_type, "name", status) VALUES(7, 'INVENTORY_CONTROL', 'Permite gestionar inventarios y ventas para cada gimnasio', 'MODULE', 'Inventario de productos', true);
+INSERT INTO public.saas_features (saas_feature_id, code, description, feature_type, "name", status) VALUES(9, 'CLASS_SCHEDULING', 'Se utiliza para dar acceso al modulo de agendamiento de clases.', 'MODULE', 'CLASS_SCHEDULING', true);
 
 INSERT INTO public.saas_plans (saas_plan_id, code, description, "name", num_days, price, status, stripe_price_id, mp_preapproval_plan_id, billing_cycle) VALUES(3, 'PLAN_FREE', 'Plan gratis por 30 dias', 'PLAN GRATIS 30 DIAS', 30, 0.00, true, 'price_1TUtSHFPCNJK5NTj8n3pxEwa', NULL, 'PLAN_FREE');
 INSERT INTO public.saas_plans (saas_plan_id, code, description, "name", num_days, price, status, stripe_price_id, mp_preapproval_plan_id, billing_cycle) VALUES(2, 'PLAN_ANUAL', 'Plan anual', 'PLAN ANUAL', 365, 1240000.00, true, 'price_1Tf8hwFPCNJK5NTjhvyPQ769', NULL, 'PLAN_ANUAL');
 INSERT INTO public.saas_plans (saas_plan_id, code, description, "name", num_days, price, status, stripe_price_id, mp_preapproval_plan_id, billing_cycle) VALUES(4, 'PLAN_ANUAL_PREMIUM', 'Plan anual premium, incluye todo los paquetes', 'PLAN ANUAL PREMIUM', 365, 1560000.00, true, 'price_1Tf8jFFPCNJK5NTjJddJmNEm', NULL, 'PLAN_ANUAL_PREMIUM');
 INSERT INTO public.saas_plans (saas_plan_id, code, description, "name", num_days, price, status, stripe_price_id, mp_preapproval_plan_id, billing_cycle) VALUES(1, 'PLAN_MENSUAL', 'Plan mensual', 'PLAN MENSUAL', 30, 180000.00, true, 'price_1TQumMFPCNJK5NTjiamdMLwI', NULL, 'PLAN_MENSUAL');
-
 
 INSERT INTO public.saas_plan_features (saas_plan_feature_id, value_boolean, value_number, value_text, saas_feature_id, saas_plan_id) VALUES(10, true, NULL, NULL, 1, 3);
 INSERT INTO public.saas_plan_features (saas_plan_feature_id, value_boolean, value_number, value_text, saas_feature_id, saas_plan_id) VALUES(11, NULL, 100.00, NULL, 4, 3);
