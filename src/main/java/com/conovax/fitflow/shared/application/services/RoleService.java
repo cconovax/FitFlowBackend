@@ -45,6 +45,40 @@ public class RoleService {
 	private final UserRoleRepository userRoleRepository;
 
 	@Transactional(readOnly = true)
+	public boolean isActiveStaffUserGym(Long gymId, Long userGymId) {
+		if (gymId == null || userGymId == null) {
+			return false;
+		}
+
+		var userGym = usersGymRepository.findByIdAndGymIdAndStatusTrue(userGymId, gymId).orElse(null);
+		if (userGym == null) {
+			return false;
+		}
+
+		List<Long> roleIds = userRoleRepository.findRoleIdsByUserGymId(userGymId);
+		return roleRepository.findAllById(roleIds).stream()
+				.filter(role -> Boolean.TRUE.equals(role.getStatus()))
+				.anyMatch(role -> Boolean.TRUE.equals(role.getIsStaff())
+						|| Boolean.TRUE.equals(role.getFullAccess()));
+	}
+
+	@Transactional(readOnly = true)
+	public boolean isActiveTrainerOrAdminUserGym(Long gymId, Long userGymId) {
+		if (gymId == null || userGymId == null) {
+			return false;
+		}
+		if (usersGymRepository.findByIdAndGymIdAndStatusTrue(userGymId, gymId).isEmpty()) {
+			return false;
+		}
+
+		List<Long> roleIds = userRoleRepository.findRoleIdsByUserGymId(userGymId);
+		return roleRepository.findAllById(roleIds).stream()
+				.filter(role -> Boolean.TRUE.equals(role.getStatus()))
+				.anyMatch(role -> "Entrenador".equalsIgnoreCase(role.getName())
+						|| "Administrador".equalsIgnoreCase(role.getName()));
+	}
+
+	@Transactional(readOnly = true)
 	public PageResponse<RoleResponse> getRoles(Long gymId, Integer page, Integer size) {
 		Pageable pageable = PaginationUtils.pageable(page, size);
 

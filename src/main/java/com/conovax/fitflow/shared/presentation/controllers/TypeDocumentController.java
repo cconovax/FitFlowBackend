@@ -31,7 +31,7 @@ public class TypeDocumentController {
 
 	@GetMapping
 	@Operation(summary = "Listar tipos de documento")
-	//@RequirePermission("list:all:type:documents")
+	//@RequirePermission("get:all:type:document")
 	public ResponseEntity<List<TypeDocumentResponse>> getAll() {
 		return ResponseEntity.ok(typeDocumentService.getAll());
 	}

@@ -31,14 +31,14 @@ public class SaasFeatureController {
 
 	@GetMapping
 	@Operation(summary = "Listar features SaaS")
-	@RequirePermission("get:all:features:saas")
+	@RequirePermission("get:all:feature:saas")
 	public ResponseEntity<List<SaasFeatureResponse>> getAll() {
 		return ResponseEntity.ok(service.getAll());
 	}
 
 	@GetMapping("/{id}")
 	@Operation(summary = "Obtener feature SaaS por ID")
-	@RequirePermission("get:features:saas")
+	@RequirePermission("get:feature:saas")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Encontrado",
 					content = @Content(schema = @Schema(implementation = SaasFeatureResponse.class))),
@@ -51,14 +51,14 @@ public class SaasFeatureController {
 
 	@PostMapping
 	@Operation(summary = "Crear feature SaaS")
-	@RequirePermission("create:features:saas")
+	@RequirePermission("create:feature:saas")
 	public ResponseEntity<SaasFeatureResponse> create(@Valid @RequestBody SaasFeatureRequest request) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.create(request));
 	}
 
 	@PutMapping("/{id}")
 	@Operation(summary = "Actualizar feature SaaS")
-	@RequirePermission("update:features:saas")
+	@RequirePermission("update:feature:saas")
 	public ResponseEntity<SaasFeatureResponse> update(
 			@PathVariable Long id,
 			@Valid @RequestBody SaasFeatureRequest request
@@ -68,7 +68,7 @@ public class SaasFeatureController {
 
 	@DeleteMapping("/{id}")
 	@Operation(summary = "Eliminar feature SaaS (lógico)")
-	@RequirePermission("delete:features:saas")
+	@RequirePermission("delete:feature:saas")
 	public ResponseEntity<Void> deleteLogical(@PathVariable Long id) {
 		service.deleteLogical(id);
 		return ResponseEntity.noContent().build();
@@ -76,7 +76,7 @@ public class SaasFeatureController {
 
 	@PutMapping("/{id}/reset")
 	@Operation(summary = "Restablecer feature SaaS eliminada")
-	@RequirePermission("reset:features:saas")
+	@RequirePermission("reset:feature:saas")
 	public ResponseEntity<Void> reset(@PathVariable Long id) {
 		service.reset(id);
 		return ResponseEntity.noContent().build();
@@ -84,7 +84,7 @@ public class SaasFeatureController {
 
 	@DeleteMapping("/{id}/force")
 	@Operation(summary = "Eliminar feature SaaS (físico)")
-	@RequirePermission("force:delete:features:saas")
+	@RequirePermission("force:delete:feature:saas")
 	public ResponseEntity<Void> forceDelete(@PathVariable Long id) {
 		service.forceDelete(id);
 		return ResponseEntity.noContent().build();

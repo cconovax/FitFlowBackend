@@ -100,7 +100,7 @@ public class UserController {
 	}
 
 	@GetMapping("/gym/{gymId}/trainers")
-	@RequirePermission("list:all:coach:gym")
+	@RequirePermission("get:all:coach:gym")
 	@RequireActiveGymSubscription
 	@Operation(
 			summary = "Listar entrenadores por gym",

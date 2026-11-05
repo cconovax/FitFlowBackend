@@ -14,6 +14,32 @@ import java.util.List;
 public interface UserGymMembershipJpaRepository extends JpaRepository<UserGymMembershipJpaEntity, Long> {
 	List<UserGymMembershipJpaEntity> findAllByUserGymIdOrderByStartDateDescIdDesc(Long userGymId);
 
+	@Query(nativeQuery = true, value = """
+		SELECT COUNT(*) > 0
+		FROM users_gyms
+		WHERE gym_id = :gymId
+		  AND user_gym_id = :userGymId
+		""")
+	boolean existsUserGymByGymIdAndUserGymId(
+			@Param("gymId") Long gymId,
+			@Param("userGymId") Long userGymId
+	);
+
+	@Query(nativeQuery = true, value = """
+		SELECT COUNT(*) > 0
+		FROM user_gym_membership ugm
+		JOIN users_gyms ug ON ug.user_gym_id = ugm.user_gym_id
+		WHERE ug.gym_id = :gymId
+		  AND ug.user_gym_id = :userGymId
+		  AND ugm.status = true
+		  AND ugm.end_date >= :today
+		""")
+	boolean existsActiveMembershipByGymIdAndUserGymId(
+			@Param("gymId") Long gymId,
+			@Param("userGymId") Long userGymId,
+			@Param("today") LocalDate today
+	);
+
 	boolean existsByUserGymIdAndStatusTrueAndEndDateGreaterThanEqual(Long userGymId, LocalDate today);
 
 	boolean existsByUserGymIdAndMembershipIdAndStatusTrueAndEndDateGreaterThanEqual(
