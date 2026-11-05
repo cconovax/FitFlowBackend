@@ -61,7 +61,7 @@ jobs:
             -url=jdbc:postgresql://localhost:5432/fitflow_ci \
             -user=postgres -password=postgres \
             -connectRetries=10 \
-            -placeholders.enabled=false \
+            -placeholderReplacement=false \
             migrate
 
 
