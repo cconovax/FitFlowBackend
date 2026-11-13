@@ -1,5 +1,5 @@
 # ── Etapa 1: compilación ────────────────────────────────────────────────────────
-FROM eclipse-temurin:17-jdk-alpine AS builder
+FROM eclipse-temurin:25-jdk-alpine AS builder
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY src ./src
 RUN ./gradlew bootJar --no-daemon -x test
 
 # ── Etapa 2: imagen de ejecución ─────────────────────────────────────────────────
-FROM eclipse-temurin:17-jre-alpine AS runtime
+FROM eclipse-temurin:25-jre-alpine AS runtime
 
 # Creamos un usuario sin privilegios de root por seguridad
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
