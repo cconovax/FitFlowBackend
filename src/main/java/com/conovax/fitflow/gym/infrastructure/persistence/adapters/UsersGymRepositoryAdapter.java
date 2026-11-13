@@ -117,6 +117,13 @@ public class UsersGymRepositoryAdapter implements UsersGymRepository {
 	}
 
 	@Override
+	public List<UserGymUserPeople> findActiveTrainersOrAdminsByGymId(Long gymId) {
+		return jpaRepository.findActiveTrainersOrAdminsByGymId(gymId).stream()
+				.map(this::toUserGymUserPeople)
+				.toList();
+	}
+
+	@Override
 	public long countActiveByGymId(Long gymId) {
 		return jpaRepository.countActiveByGymId(gymId);
 	}

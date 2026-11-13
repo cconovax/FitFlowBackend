@@ -61,7 +61,7 @@ public class ProductController {
 
 	@GetMapping("/gym/{gymId}/search")
 	@Operation(summary = "Buscar productos por coincidencia de nombre")
-	@RequirePermission("get:all:product:gym")
+	@RequirePermission("search:product:gym")
 	@RequireActiveGymSubscription
 	public ResponseEntity<List<ProductResponse>> search(
 			@PathVariable Long gymId,

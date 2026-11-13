@@ -150,6 +150,34 @@ public interface UsersGymJpaRepository extends JpaRepository<UsersGymJpaEntity, 
 			@Param("search") String search
 	);
 
+	@Query(nativeQuery = true, value = """
+			SELECT
+				ug.user_gym_id AS userGymId,
+				u.user_id AS userId,
+				ug.status AS userGymStatus,
+				p.people_id AS peopleId,
+				p.num_document AS numDocument,
+				p.email AS email,
+				p.names AS names,
+				p.surnames AS surnames,
+				p.phone AS phone
+			FROM users_gyms ug
+			JOIN users u ON u.user_id = ug.user_id
+			JOIN peoples p ON p.people_id = u.people_id
+			WHERE ug.gym_id = :gymId
+				AND ug.status = true
+				AND EXISTS (
+					SELECT 1
+					FROM users_gym_role ugr
+					JOIN roles r ON r.role_id = ugr.role_id
+					WHERE ugr.user_gym_id = ug.user_gym_id
+						AND r.status = true
+						AND r.name IN ('Entrenador', 'Administrador')
+				)
+			ORDER BY p.names, p.surnames, ug.user_gym_id
+		""")
+	List<UserGymUserPeopleProjection> findActiveTrainersOrAdminsByGymId(@Param("gymId") Long gymId);
+
 	@Query("SELECT COUNT(ug) FROM UsersGymJpaEntity ug WHERE ug.gymId = :gymId AND ug.status = true")
 	long countActiveByGymId(@Param("gymId") Long gymId);
 

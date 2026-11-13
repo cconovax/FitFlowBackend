@@ -49,7 +49,7 @@ public class UserGymMembershipController {
 
 	@GetMapping("/user-gym/{userGymId}/gym/{gymId}")
 	@Operation(summary = "Listar membresías asignadas de un usuario de un gym en especifico")
-	@RequirePermission("list:membership:users")
+	@RequirePermission("get:all:membership:user")
 	@RequireActiveGymSubscription
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Ok",

@@ -30,7 +30,7 @@ public class DepartamentController {
 
 	@GetMapping
 	@Operation(summary = "Listar departamentos")
-	@RequirePermission("get:all:departments")
+	@RequirePermission("get:all:department")
 	public ResponseEntity<PageResponse<DepartamentResponse>> getAll(
 			@RequestParam(required = false, defaultValue = "0") Integer page,
 			@RequestParam(required = false, defaultValue = "15") Integer size,
@@ -54,7 +54,7 @@ public class DepartamentController {
 
 	@GetMapping("/country/{countryId}")
 	@Operation(summary = "Listar departamentos por país")
-	//@RequirePermission("get:departments:for:country")
+	//@RequirePermission("get:all:department:for:country")
 	public ResponseEntity<PageResponse<DepartamentResponse>> getAllByCountry(
 			@PathVariable Long countryId,
 			@RequestParam(required = false, defaultValue = "0") Integer page,
@@ -90,7 +90,7 @@ public class DepartamentController {
 
 	@PutMapping("/{id}/reset")
 	@Operation(summary = "Restablecer departamento eliminado")
-	@RequirePermission("update:department")
+	@RequirePermission("reset:department")
 	public ResponseEntity<Void> reset(@PathVariable Long id) {
 		departamentService.reset(id);
 		return ResponseEntity.noContent().build();

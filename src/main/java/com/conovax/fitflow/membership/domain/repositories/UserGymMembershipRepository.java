@@ -12,6 +12,10 @@ public interface UserGymMembershipRepository {
 
 	Optional<UserGymMembership> findById(Long id);
 
+	boolean existsUserGymByGymIdAndUserGymId(Long gymId, Long userGymId);
+
+	boolean existsActiveMembershipByGymIdAndUserGymId(Long gymId, Long userGymId, LocalDate today);
+
 	boolean existsActiveMembershipByUserGymId(Long userGymId, LocalDate today);
 
 	boolean existsActiveMembershipByUserGymIdAndMembershipId(Long userGymId, Long membershipId, LocalDate today);

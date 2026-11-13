@@ -42,6 +42,12 @@ public record GymSubscriptionStatusResponse(
 		@Schema(description = "Fecha de creación de la orden")
 		java.time.LocalDateTime createdAt,
 
+		@Schema(description = "Fecha de vencimiento de la suscripción vigente", example = "2026-11-20")
+		java.time.LocalDate endDate,
+
+		@Schema(description = "Días restantes hasta el vencimiento", example = "30")
+		Long daysRemaining,
+
 		@Schema(description = "Features incluidas en el plan contratado")
 		List<SaasPlanFeatureResponse> planFeatures
 ) {

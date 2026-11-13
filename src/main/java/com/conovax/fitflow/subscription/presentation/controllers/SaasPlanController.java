@@ -31,14 +31,14 @@ public class SaasPlanController {
 
 	@GetMapping
 	@Operation(summary = "Listar planes SaaS")
-	@RequirePermission("get:all:plans:saas")
+	@RequirePermission("get:all:plan:saas")
 	public ResponseEntity<List<SaasPlanResponse>> getAll() {
 		return ResponseEntity.ok(service.getAll());
 	}
 
 	@GetMapping("/{id}")
 	@Operation(summary = "Obtener plan SaaS por ID")
-	@RequirePermission("get:plans:saas")
+	@RequirePermission("get:plan:saas")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Encontrado",
 					content = @Content(schema = @Schema(implementation = SaasPlanResponse.class))),
@@ -51,14 +51,14 @@ public class SaasPlanController {
 
 	@PostMapping
 	@Operation(summary = "Crear plan SaaS")
-	@RequirePermission("create:plans:saas")
+	@RequirePermission("create:plan:saas")
 	public ResponseEntity<SaasPlanResponse> create(@Valid @RequestBody SaasPlanRequest request) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.create(request));
 	}
 
 	@PutMapping("/{id}")
 	@Operation(summary = "Actualizar plan SaaS")
-	@RequirePermission("update:plans:saas")
+	@RequirePermission("update:plan:saas")
 	public ResponseEntity<SaasPlanResponse> update(
 			@PathVariable Long id,
 			@Valid @RequestBody SaasPlanRequest request
@@ -68,7 +68,7 @@ public class SaasPlanController {
 
 	@DeleteMapping("/{id}")
 	@Operation(summary = "Eliminar plan SaaS (lógico)")
-	@RequirePermission("delete:plans:saas")
+	@RequirePermission("delete:plan:saas")
 	public ResponseEntity<Void> deleteLogical(@PathVariable Long id) {
 		service.deleteLogical(id);
 		return ResponseEntity.noContent().build();
@@ -76,7 +76,7 @@ public class SaasPlanController {
 
 	@PutMapping("/{id}/reset")
 	@Operation(summary = "Restablecer plan SaaS eliminado")
-	@RequirePermission("reset:plans:saas")
+	@RequirePermission("reset:plan:saas")
 	public ResponseEntity<Void> reset(@PathVariable Long id) {
 		service.reset(id);
 		return ResponseEntity.noContent().build();

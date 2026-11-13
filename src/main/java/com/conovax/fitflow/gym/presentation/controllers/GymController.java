@@ -61,7 +61,7 @@ public class GymController {
 
 	@GetMapping("/search")
 	@Operation(summary = "Buscar gyms por coincidencia de nombre")
-	@RequirePermission("gym:read")
+	@RequirePermission("search:gym:for:name")
 	public ResponseEntity<List<GymResponse>> search(@RequestParam String name) {
 		return ResponseEntity.ok(gymService.searchByName(name));
 	}

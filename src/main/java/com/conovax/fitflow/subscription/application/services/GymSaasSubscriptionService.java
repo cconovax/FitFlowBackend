@@ -196,10 +196,15 @@ public class GymSaasSubscriptionService {
 				orderRepository.save(order.toBuilder().status("PAST_DUE").build());
 				log.info("Suscripción Stripe con pago vencido para gym {} (sub {})", order.getGymId(), sub.getId());
 			}
-			case "canceled", "unpaid" -> {
+			case "unpaid" -> {
+				// Sin desactivar la suscripción interna: el gym conserva el acceso hasta su end_date.
+				orderRepository.save(order.toBuilder().status("CANCELLED").build());
+				log.info("Suscripción Stripe impaga para gym {}: acceso se mantiene hasta su fecha de vencimiento", order.getGymId());
+			}
+			case "canceled" -> {
 				orderRepository.save(order.toBuilder().status("CANCELLED").build());
 				gymSubscriptionService.deactivateCurrentSubscription(order.getGymId());
-				log.info("Suscripción Stripe cancelada/impaga para gym {}: {}", order.getGymId(), sub.getStatus());
+				log.info("Suscripción Stripe cancelada para gym {}: {}", order.getGymId(), sub.getStatus());
 			}
 			default -> log.debug("Estado Stripe '{}' sin acción para sub {}", sub.getStatus(), sub.getId());
 		}
@@ -302,6 +307,7 @@ public class GymSaasSubscriptionService {
 		if (maybeOrder.isPresent()) {
 			GymPaymentOrder order = maybeOrder.get();
 			SaasPlanResponse plan = saasPlanService.getById(order.getSaasPlanId());
+			var currentPeriod = gymSubscriptionService.getCurrentByGymId(gymId);
 			return new GymSubscriptionStatusResponse(
 					order.getId(),
 					order.getStatus(),
@@ -315,6 +321,8 @@ public class GymSaasSubscriptionService {
 					order.getPaymentMethodType() != null ? order.getPaymentMethodType() : "CARD",
 					order.getCustomerEmail(),
 					order.getCreatedAt(),
+					currentPeriod.endDate(),
+					currentPeriod.daysRemaining(),
 					plan.features() != null ? plan.features() : List.of()
 			);
 		}
@@ -360,6 +368,8 @@ public class GymSaasSubscriptionService {
 				null,
 				null,
 				createdAt,
+				internalSub.endDate(),
+				internalSub.daysRemaining(),
 				features
 		);
 	}
